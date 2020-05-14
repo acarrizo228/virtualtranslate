@@ -12,7 +12,7 @@ new
 	gNominationBusiness[97],
 	gNomBusinessTotal[97];
     
-new gNominationName[16][50] = {"Долгожитель", "Благотворитель", "Лучший сотрудник МВД", "Лучший сотрудник МО", "Лучший сотрудник Brilliant Media", "Лучший Мафиози", "Грузчик", "Бизнесмен", "Самый Богатый", "Меценат штата", "Лучший сотрудник Правительство", "Лучший сотрудник FBI", "Лучший сотрудник МЗ", "Лучший Бандит", "Строитель дорог", "Работник завода"};
+new gNominationName[16][50] = {"Yvelaze Asakiani","Qvelmoqmedi", "Sauketeso Policieli", "Sauketeso Jariskaci", "Sauketeso Jurnalisti", "Sauketso Mafiozi", "Mtvirtavi", "Sauketeso Biznesmani", "Yvelaze Mdidari", "Mecenati", "Mtavrobis Sauketeso Wevri", "Sauketeso FBI Agenti", "Sauketeso Eqeimi", "Sauketeso Ghetto Wevri"    "Sauketeso Mshenebeli", "Qarxnis Sauketeso Mushaki"};
     
 public OnGameModeInit()
 {
@@ -159,13 +159,13 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 		    
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Dro Shtatshi: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second);
 		}
 	    if(PI[playerid][pCard])
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sВаш результат: %d", frmt_nom_message, PI[playerid][pLevel]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sTqveni Shedegi: %d", frmt_nom_message, PI[playerid][pLevel]);
 			
 		else
-		    strcat(frmt_nom_message, "{FF6347}Для того, чтобы ваш результат учитывался\nкупите Билет Рекордсмена в Мэрии");
+		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom gaizardos Tqveni Shedegi\nSheidzinet Rekordsmenis Bileti");
 
 	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
 	    cache_delete(result, mysql);
