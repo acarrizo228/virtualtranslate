@@ -1869,7 +1869,7 @@ stock SetNominationName()
 
 	cache_delete(rBestFactory, mysql);
 	
-	print("Didebis Xidis Chamotvirtva Dasrulebulia");
+	print("Закончилась загрузка Аллеи Славы");
 
 }
 
