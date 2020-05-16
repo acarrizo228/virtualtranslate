@@ -115,7 +115,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[0][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Долгожитель{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}Yvelaze Asakiani{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -159,15 +159,15 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 		    
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Dro Shtatshi: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Dro Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis Nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second);
 		}
 	    if(PI[playerid][pCard])
 			format(frmt_nom_message, sizeof frmt_nom_message, "%sTqveni Shedegi: %d", frmt_nom_message, PI[playerid][pLevel]);
 			
 		else
-		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom gaizardos Tqveni Shedegi\nSheidzinet Rekordsmenis Bileti");
+		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom gaizardos Tqveni Reputacia\nSheidzinet Rekordsmenis Bileti");
 
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationArea[1])
@@ -180,7 +180,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[1][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Благотворитель{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}Qvelmoqmedi{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -224,15 +224,15 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Результат: {FFFF00}%d${FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[1]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Asaki Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Shedegi: {FFFF00}%d${FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[1]);
 		}
         if(PI[playerid][pCard])
-	    	format(frmt_nom_message, sizeof frmt_nom_message, "%sВаш результат: %d$", frmt_nom_message, PI[playerid][pCharity]);
+	    	format(frmt_nom_message, sizeof frmt_nom_message, "%sTqveni Shedegi: %d$", frmt_nom_message, PI[playerid][pCharity]);
 	    	
 		else
-		    strcat(frmt_nom_message, "{FF6347}Для того, чтобы ваш результат учитывался\nкупите Билет Рекордсмена в Мэрии");
+		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom Tqveni Reputacia Amagldes\nSheidzinet Rekordsmenis Bileti Meriashi");
 
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationArea[2])
@@ -245,7 +245,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[2][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Лучший сотрудник МВД{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}Policiis Sauketeso Tanamshromeli{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -289,19 +289,19 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Результат: {FFFF00}%d балл(ов){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[2]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Asaki Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis Nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Shedegi: {FFFF00}%d Qula(ebi){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[2]);
 		}
 		
         if(PI[playerid][pCard])
         {
 		    if(PI[playerid][pFraction] == 8)
-				format(frmt_nom_message, sizeof frmt_nom_message, "%s\nВаш результат: %d балл(ов)", frmt_nom_message, PI[playerid][pPointsOrg]);
+				format(frmt_nom_message, sizeof frmt_nom_message, "%s\nTqveni Shedegi: %d Qula(ebi)", frmt_nom_message, PI[playerid][pPointsOrg]);
 		}
 		else
-		    strcat(frmt_nom_message, "{FF6347}Для того, чтобы ваш результат учитывался\nкупите Билет Рекордсмена в Мэрии");
+		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom Amagldes Tqveni Reputacia\nSheidzinet Rekordsmenis Bileti Meriashi");
 
 		
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationArea[3])
@@ -314,7 +314,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[3][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Лучший сотрудник МО{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}Sauketeso Jariskaci{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -358,7 +358,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Результат: {FFFF00}%d балл(ов){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[3]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Asaki Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis Nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Shedegi: {FFFF00}%d Qula(ebi){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[3]);
 		}
 
         if(PI[playerid][pCard])
@@ -368,9 +368,9 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		}
 
 		else
-		    strcat(frmt_nom_message, "{FF6347}Для того, чтобы ваш результат учитывался\nкупите Билет Рекордсмена в Мэрии");
+		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom Aimaglot Reputacia\nSheidiznet Rekordsmenis Bileti Meriashi");
 
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationArea[4])
@@ -383,7 +383,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[4][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Лучший сотрудник Brilliant Media{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}Sauketeso Jurnalisti{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -427,18 +427,18 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Результат: {FFFF00}%d балл(ов){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[4]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Asaki Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis Nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Shedegi: {FFFF00}%d Qula(ebi){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[4]);
 		}
 
         if(PI[playerid][pCard])
         {
 		    if(PI[playerid][pFraction] == 9)
-				format(frmt_nom_message, sizeof frmt_nom_message, "%s\nВаш результат: %d балл(ов)", frmt_nom_message, PI[playerid][pPointsOrg]);
+				format(frmt_nom_message, sizeof frmt_nom_message, "%s\nShedegi: %d qula(ebi)", frmt_nom_message, PI[playerid][pPointsOrg]);
 		}
 		else
-		    strcat(frmt_nom_message, "{FF6347}Для того, чтобы ваш результат учитывался\nкупите Билет Рекордсмена в Мэрии");
+		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom Aimaglot Reputacia\nSheidzinet Rekordsmenis Bileti Meriashi");
 
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationArea[5])
@@ -451,7 +451,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[5][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Лучший Мафиози{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}Sauketeso Mafiozi{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -495,18 +495,18 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Результат: {FFFF00}%d балл(ов){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[5]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Asaki Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis Nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Shedegi: {FFFF00}%d Qula(ebi){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[5]);
 		}
 
         if(PI[playerid][pCard])
         {
 		    if(PI[playerid][pFraction] >= 12 && PI[playerid][pFraction] <= 16)
-				format(frmt_nom_message, sizeof frmt_nom_message, "%s\nВаш результат: %d балл(ов)", frmt_nom_message, PI[playerid][pPointsOrg]);
+				format(frmt_nom_message, sizeof frmt_nom_message, "%s\nTqveni Shedegi: %d Qula(ebi)", frmt_nom_message, PI[playerid][pPointsOrg]);
 		}
 		else
-		    strcat(frmt_nom_message, "{FF6347}Для того, чтобы ваш результат учитывался\nкупите Билет Рекордсмена в Мэрии");
+		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom Aimaglot Reputacia\nSheidzinet Rekordsmenis Bileti Meriashi");
 
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationArea[6])
@@ -519,7 +519,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[6][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Грузчик{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}Mtvirtavi{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -563,16 +563,16 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Результат: {FFFF00}%d балл(ов){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[6]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Asaki Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis Nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Shedegi: {FFFF00}%d Qula(ebi){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[6]);
 		}
 
 		if(PI[playerid][pCard])
-			format(frmt_nom_message, sizeof frmt_nom_message, "%s\nВаш результат: %d балл(ов)", frmt_nom_message, PI[playerid][pPointsLoader]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%s\nShedegi: %d Qula(ebi)", frmt_nom_message, PI[playerid][pPointsLoader]);
 			
 		else
-		    strcat(frmt_nom_message, "{FF6347}Для того, чтобы ваш результат учитывался\nкупите Билет Рекордсмена в Мэрии");
+		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom Amagldes Tqveni Reputacia\nSheidzinet Rekordsmenis Bileti Meriashi");
 
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationArea[7])
@@ -585,7 +585,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[7][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Бизнесмен{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}Sauketeso Biznesmeni{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -629,9 +629,9 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Результат: {FFFF00}%d${FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[7]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Asaki Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis Nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Shedegi: {FFFF00}%d${FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[7]);
 		}
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationArea[8])
@@ -644,7 +644,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[8][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Самый Богатый{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}Yvelaze Mdidari{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -688,9 +688,9 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Результат: {FFFF00}%d${FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[8]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Asaki Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis Nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Shedegi: {FFFF00}%d${FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[8]);
 		}
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationArea[9])
@@ -703,7 +703,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[9][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Меценат штата{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}Mecenati{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -747,15 +747,15 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Результат: {FFFF00}%d рублей{FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[9]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Asaki Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis Nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Shedegi: {FFFF00}%d Donate{FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[9]);
 		}
 		if(PI[playerid][pCard])
 			format(frmt_nom_message, sizeof frmt_nom_message, "%s\nВаш результат: %d рублей", frmt_nom_message, PI[playerid][pTotalDon]);
 			
 		else
-		    strcat(frmt_nom_message, "{FF6347}Для того, чтобы ваш результат учитывался\nкупите Билет Рекордсмена в Мэрии");
+		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom Aimaglot Reputacia\nSheidzinet Rekordsmenis Bileti Meriashi");
 
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationArea[10])
@@ -768,7 +768,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[10][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Лучший сотрудник Правительство{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}Mtavrobis Sauketeso Wevri{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -812,17 +812,17 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Результат: {FFFF00}%d балл(ов){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[10]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Asaki Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis Nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Shedegi: {FFFF00}%d Qula(ebi){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[10]);
 		}
 		if(PI[playerid][pCard])
 		{
 		    if(PI[playerid][pFraction] == 10)
-				format(frmt_nom_message, sizeof frmt_nom_message, "%s\nВаш результат: %d балл(ов)", frmt_nom_message, PI[playerid][pPointsOrg]);
+				format(frmt_nom_message, sizeof frmt_nom_message, "%s\nShedegi: %d Qula(ebi)", frmt_nom_message, PI[playerid][pPointsOrg]);
 		}
 		else
-		    strcat(frmt_nom_message, "{FF6347}Для того, чтобы ваш результат учитывался\nкупите Билет Рекордсмена в Мэрии");
+		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom Aimaglot Tqveni Reputacia\nSheidzinet Rekordsmenis Bileti Meriashi");
 
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationArea[11])
@@ -835,7 +835,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[11][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Лучший сотрудник FBI{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}FBI Sauketeso Agenti{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -879,17 +879,17 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Результат: {FFFF00}%d балл(ов){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[11]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Asaki Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis Nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Shedegi: {FFFF00}%d Qula(ebi){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[11]);
 		}
 		if(PI[playerid][pCard])
 		{
 		    if(PI[playerid][pFraction] == 11)
-				format(frmt_nom_message, sizeof frmt_nom_message, "%s\nВаш результат: %d балл(ов)", frmt_nom_message, PI[playerid][pPointsOrg]);
+				format(frmt_nom_message, sizeof frmt_nom_message, "%s\nShedegi: %d Qula(ebi)", frmt_nom_message, PI[playerid][pPointsOrg]);
 		}
 		else
-		    strcat(frmt_nom_message, "{FF6347}Для того, чтобы ваш результат учитывался\nкупите Билет Рекордсмена в Мэрии");
+		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom Aimaglot Reputacia\Sheidzinet Rekordsmenis Bileti Meriashi");
 
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationArea[12])
@@ -902,7 +902,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[12][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Лучший сотрудник МЗ{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}Sauketeso Eqimi{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -946,7 +946,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Результат: {FFFF00}%d балл(ов){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[12]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Asaki Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis Nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Shedegi: {FFFF00}%d Qula(ebi){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[12]);
 		}
 		if(PI[playerid][pCard])
 		{
@@ -955,9 +955,9 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		}
 		
 		else
-		    strcat(frmt_nom_message, "{FF6347}Для того, чтобы ваш результат учитывался\nкупите Билет Рекордсмена в Мэрии");
+		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom Aimaglot Reputacia\nSheidzinet Rekordsmenis Bileti Meriashi");
 
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationArea[13])
@@ -970,7 +970,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[13][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Лучший Бандит{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}Sauketeso Ghetto Wevri{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -1014,7 +1014,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Результат: {FFFF00}%d балл(ов){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[13]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Asaki Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis Nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Shedegi: {FFFF00}%d Qula(ebi){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[13]);
 		}
 		
 		if(PI[playerid][pCard])
@@ -1024,9 +1024,9 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		}
 		
 		else
-		    strcat(frmt_nom_message, "{FF6347}Для того, чтобы ваш результат учитывался\nкупите Билет Рекордсмена в Мэрии");
+		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom Aimaglot Reputacia\nSheidzinet Rekordsmenis Bileti Meriashi");
 
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationArea[14])
@@ -1039,7 +1039,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[14][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Строитель дорог{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}Mshenebeli{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -1083,16 +1083,16 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Результат: {FFFF00}%d балл(ов){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[14]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%Saxeli: {FFFF00}%s\n{FFFFFF}Asaki Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis Nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Shedegi: {FFFF00}%d Qula(ebi){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[14]);
 		}
 		
 	    if(PI[playerid][pCard])
-			format(frmt_nom_message, sizeof frmt_nom_message, "%s\nВаш результат: %d балл(ов)", frmt_nom_message, PI[playerid][pPointsRoad]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%s\nShedegi: %d Qula(ebi)", frmt_nom_message, PI[playerid][pPointsRoad]);
 			
 		else
-		    strcat(frmt_nom_message, "{FF6347}Для того, чтобы ваш результат учитывался\nкупите Билет Рекордсмена в Мэрии");
+		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom Aimaglot Reputacia\nSheidzinet Rekordsmenis Bileti Meriashi");
 		    
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationArea[15])
@@ -1105,7 +1105,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		format(query_nom_get, sizeof query_nom_get, "SELECT `NickName`, `Level`, `Age`, `Fraction`, `Subfraction`, `Rank`, `TelNum` FROM `accounts` WHERE `NickName` = '%s'", gNickNomination[15][0]);
 		new Cache:result = mysql_query(mysql, query_nom_get);
 
-		strcat(frmt_nom_message, "\n\n{FFDA00}Работник завода{FFFFFF}\n\n\n");
+		strcat(frmt_nom_message, "\n\n{FFDA00}Qarxnis Mushaki{FFFFFF}\n\n\n");
 
 		if(cache_get_row_count(mysql) > 0)
 		{
@@ -1149,21 +1149,21 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 		    else strcat(fractionname, "-"), strcat(rankname, "-");
 
-			format(frmt_nom_message, sizeof frmt_nom_message, "%sИмя: {FFFF00}%s\n{FFFFFF}Лет в штате: {FFFF00}%d\n{FFFFFF}Возраст: {FFFF00}%d\n{FFFFFF}Номер телефона: {FFFF00}%d\n{FFFFFF}Организация: {FFFF00}%s\n{FFFFFF}Ранг: {FFFF00}%s\n{FFFFFF}Дата: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Результат: {FFFF00}%d балл(ов){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[15]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%sSaxeli: {FFFF00}%s\n{FFFFFF}Asaki Shtatshi: {FFFF00}%d\n{FFFFFF}Asaki: {FFFF00}%d\n{FFFFFF}Telefonis Nomeri: {FFFF00}%d\n{FFFFFF}Organizacia: {FFFF00}%s\n{FFFFFF}Rangi: {FFFF00}%s\n{FFFFFF}Ricxvi: {FFFF00}%02d.%02d.%02d %02d:%02d:%02d{FFFFFF}\n\n{FFFFFF}Shedegi: {FFFF00}%d Qula(ebi){FFFFFF}\n\n", frmt_nom_message, nickname, level, age, phone, fractionname, rankname, day,month,year, hour,minute,second, gPointsNomination[15]);
 		}
 		
 	    if(PI[playerid][pCard])
-			format(frmt_nom_message, sizeof frmt_nom_message, "%s\nВаш результат: %d балл(ов)", frmt_nom_message, PI[playerid][pPointsFactory]);
+			format(frmt_nom_message, sizeof frmt_nom_message, "%s\nShedegi: %d Qula(ebi)", frmt_nom_message, PI[playerid][pPointsFactory]);
 			
 		else
-		    strcat(frmt_nom_message, "{FF6347}Для того, чтобы ваш результат учитывался\nкупите Билет Рекордсмена в Мэрии");
+		    strcat(frmt_nom_message, "{FF6347}Imisatvis Rom Aimaglot Reputacia\nSheidiznet Rekordsmenis Bileti Meriashi");
 		    
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Аллея славы", frmt_nom_message, !"Закрыть", !"");
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Didebis Xidi", frmt_nom_message, !"Daxurva", !"");
 	    cache_delete(result, mysql);
 	}
 	else if(areaid == gNominationStar)
 	{
-	    ShowPlayerDialogEx(playerid, 1881, DIALOG_STYLE_LIST, !"Аллея славы", !"{FF7319}1.{FFFFFF} Главные рекордсмены\n{FF7319}2.{FFFFFF} Долгожитель\n{FF7319}3.{FFFFFF} Благотворитель\n{FF7319}4.{FFFFFF} Лучший сотрудник МВД\n{FF7319}5.{FFFFFF} Лучший сотрудник МО\n{FF7319}6.{FFFFFF} Лучший сотрудник Brilliant Media\n{FF7319}7.{FFFFFF} Лучший Мафиози\n{FF7319}8.{FFFFFF} Грузчик\n{FF7319}9.{FFFFFF} Бизнесмен\n{FF7319}10.{FFFFFF} Самый Богатый\n{FF7319}11.{FFFFFF} Меценат штата\n{FF7319}12.{FFFFFF} Лучший сотрудник Правительство\n{FF7319}13.{FFFFFF} Лучший сотрудник FBI\n{FF7319}14.{FFFFFF} Лучший сотрудник МЗ\n{FF7319}15.{FFFFFF} Лучший Бандит\n{FF7319}16.{FFFFFF} Строитель дорог\n{FF7319}17.{FFFFFF} Работник завода", !"Выбор", !"Закрыть");
+	    ShowPlayerDialogEx(playerid, 1881, DIALOG_STYLE_LIST, !"Didebis Xidi", !"{FF7319}1.{FFFFFF} Mtavari Rekordsmenebi\n{FF7319}2.{FFFFFF} Yvelaze Asakiani\n{FF7319}3.{FFFFFF} Qvelmoqmedi\n{FF7319}4.{FFFFFF} Sauketeso Policieli\n{FF7319}5.{FFFFFF} Sauketeso Jariskaci\n{FF7319}6.{FFFFFF} Sauketeso Jurnalisti\n{FF7319}7.{FFFFFF} Sauketeso Mafiozi\n{FF7319}8.{FFFFFF} Mtvirtavi\n{FF7319}9.{FFFFFF} Sauketeso Biznesmani\n{FF7319}10.{FFFFFF} Yvelaze Mdidari\n{FF7319}11.{FFFFFF} Mecenati\n{FF7319}12.{FFFFFF} Mtavrobis Sauketeso Wevri\n{FF7319}13.{FFFFFF}FBI Sauketeso Agenti\n{FF7319}14.{FFFFFF} Sauketeso Eqimi\n{FF7319}15.{FFFFFF} Sauketeso Ghetto Wevri\n{FF7319}16.{FFFFFF} Mshenebeli\n{FF7319}17.{FFFFFF} Qarxnis Sauketeso Mushaki", !"Archeva", !"Daxurva");
 	}
     #if defined al_OnPlayerEnterDynamicArea
          return al_OnPlayerEnterDynamicArea(playerid, areaid);
@@ -1869,7 +1869,7 @@ stock SetNominationName()
 
 	cache_delete(rBestFactory, mysql);
 	
-	print("Закончилась загрузка Аллеи Славы");
+	print("Didebis Xidis Chamotvirtva Dasrulebulia");
 
 }
 
