@@ -8,7 +8,7 @@ public OnEnterExitModShop(playerid, enterexit, interiorid)
 	{
 	    if(GetPlayerVehicleID(playerid) == GetPlayerVehicleID(id)) pTemp[id][pAntiAir] = 4;
 	}
-    if(interiorid > 0 && strcmp(CarsInfo[model][csCategory], "Lowriders", true) == 0) SCM(playerid, 0xFF0000FF, "Внимание! В данный момент этот вид транспорта нельзя тюнинговать");
+    if(interiorid > 0 && strcmp(CarsInfo[model][csCategory], "Lowriders", true) == 0) SCM(playerid, 0xFF0000FF, "Yuradgeba! Am Saxis Transportis Datunigeba Sheudzlebelia");
     return true;
 }
 stock ToggleTextDrawForPlayer(playerid, Text:textdraw, toggle)
@@ -127,7 +127,7 @@ public OnPlayerDisconnect(playerid, reason)
        	if(IsValidDynamic3DTextLabel(JobText3D[playerid]))
 			DestroyDynamic3DTextLabel(JobText3D[playerid]);
 	}
-	// обнуление стола для крупье
+	// Dileris Magidis Ganuleba
 	if(InJob[playerid] == 8)
 	{
 		if(temp_table[playerid] != -1)
@@ -211,7 +211,7 @@ public OnPlayerDisconnect(playerid, reason)
 		f_TogglePlayerControllable(target, true);
 		SetPlayerSpecialAction(target, 0);
 	    ClearAnims(target);
-     	SendClientMessage(target, 0xFF5030AA, !"Сотрудник вышел из игры. Преследование прекращено");
+     	SendClientMessage(target, 0xFF5030AA, !"Tanamshromeli Gavida Tamashidan. Devna Shewyvetilia");
         CheckPlayerGoCuff(target);
         CheckPlayerGoCuff(playerid);
 	}
@@ -229,7 +229,7 @@ public OnPlayerDisconnect(playerid, reason)
 			temp_cuffer_receiver[playerid] = INVALID_PLAYER_ID;
 
 			TogglePlayerControllable(target, 1);
-			SendClientMessage(target, 0xFF5030AA, !"Сотрудник вышел из игры. Наручники сняты");
+			SendClientMessage(target, 0xFF5030AA, !"Tanamshromeli Gavida Tamashidan. Xel-Borkilebi Moxsnilia");
 		}
 	}
 	if(temp_tie_receiver[playerid] != INVALID_PLAYER_ID)
@@ -243,7 +243,7 @@ public OnPlayerDisconnect(playerid, reason)
 			temp_tie_receiver[playerid] = INVALID_PLAYER_ID;
 
 			f_TogglePlayerControllable(target, true);
-			SendClientMessage(target, 0xFF5030AA, !"Веревка снята");
+			SendClientMessage(target, 0xFF5030AA, !"Toki Moxsnilia");
 		}
 	}
 	if(temp_cuffer_sender[playerid] != INVALID_PLAYER_ID)
@@ -274,10 +274,10 @@ public OnPlayerDisconnect(playerid, reason)
 	    new
 	        frmt_exit_cuff[120];
 
-		format(frmt_exit_cuff, sizeof frmt_exit_cuff, "Арестованный {FFFFFF}%s {269BD8}вышел из игры", PN(playerid));
+		format(frmt_exit_cuff, sizeof frmt_exit_cuff, "Dakavebuli {FFFFFF}%s {269BD8}Gavida Tamashidan", PN(playerid));
 		SendClientMessage(cufferid, 0x269BD8FF, frmt_exit_cuff);
 
-	    format(frmt_exit_cuff, sizeof frmt_exit_cuff, "Игрок %s вышел при аресте и был отправлен в тюрьму", PN(playerid));
+	    format(frmt_exit_cuff, sizeof frmt_exit_cuff, "Motamashe %s Gavida Dakavebis Dros Da Motavsebulia Cixeshi", PN(playerid));
 	    SendClientMessageToAll(0xFF5030AA, frmt_exit_cuff);
 
 	}
@@ -312,10 +312,10 @@ public OnPlayerDisconnect(playerid, reason)
 	    new
 	        frmt_exit_cuff[120];
 
-		format(frmt_exit_cuff, sizeof frmt_exit_cuff, "Арестованный {FFFFFF}%s {269BD8}вышел из игры", PN(playerid));
+		format(frmt_exit_cuff, sizeof frmt_exit_cuff, "Dakavebuli {FFFFFF}%s {269BD8}Gavida Tamashidan", PN(playerid));
 		SendClientMessage(cufferid, 0x269BD8FF, frmt_exit_cuff);
 
-	    format(frmt_exit_cuff, sizeof frmt_exit_cuff, "Игрок %s вышел при аресте и был отправлен в тюрьму", PN(playerid));
+	    format(frmt_exit_cuff, sizeof frmt_exit_cuff, "Motamashe %sGavida Dakavebis Dros Da Motavsebulia Cixeshi", PN(playerid));
 	    SendClientMessageToAll(0xFF5030AA, frmt_exit_cuff);
 
 	}
@@ -348,10 +348,10 @@ public OnPlayerDisconnect(playerid, reason)
 		    new
 		        frmt_exit_cuff[120];
 
-			format(frmt_exit_cuff, sizeof frmt_exit_cuff, "Погоня прервана ({FFFFFF}%s {269BD8}вышел из игры)", PN(playerid));
+			format(frmt_exit_cuff, sizeof frmt_exit_cuff, "Devna Shecherebulia ({FFFFFF}%s {269BD8}Gavida Tamashidan)", PN(playerid));
 			SendClientMessage(cufferid, 0x269BD8FF, frmt_exit_cuff);
 
-		    format(frmt_exit_cuff, sizeof frmt_exit_cuff, "Игрок %s вышел при аресте и был отправлен в тюрьму", PN(playerid));
+		    format(frmt_exit_cuff, sizeof frmt_exit_cuff, "Motamashe %s Gavida Dakavebis Dros Da Motavsebulia Cixeshi", PN(playerid));
 		    SendClientMessageToAll(0xFF5030AA, frmt_exit_cuff);
 	    }
 	}
@@ -368,9 +368,9 @@ public OnPlayerDisconnect(playerid, reason)
 			id = gCalls[playerid][gCaller];
 			
 		else
-			return SendClientMessage(playerid, COLOR_GREY, !"Ошибка (#112)");
+			return SendClientMessage(playerid, COLOR_GREY, !"Shecdoma (#112)");
 			
-		SendClientMessage(id, COLOR_YELLOW, !"Собеседник вышел из игры");
+		SendClientMessage(id, COLOR_YELLOW, !"Tanamosaubre Gavida Tamashidan");
 		SetPlayerSpecialAction(id, SPECIAL_ACTION_STOPUSECELLPHONE);
 		SetTimerEx("@__ClearPhone",2000,false,"i",id);
 		gCalls[playerid][gCaller] = INVALID_PLAYER_ID;
@@ -385,7 +385,7 @@ public OnPlayerDisconnect(playerid, reason)
 		if(gNewsDialee[i] == playerid)
 		{
 			gNewsDialee[i] = INVALID_PLAYER_ID;
-			SendClientMessage(gNewsDialer[i], COLOR_YELLOW, "Игрок вышел из игры");
+			SendClientMessage(gNewsDialer[i], COLOR_YELLOW, "Motamashe Gavida Tamashidan");
 		}
 	}
 
@@ -553,7 +553,7 @@ public OnPlayerDisconnect(playerid, reason)
 		pTemp[playerid][pMechID] = INVALID_VEHICLE_ID;
 		pTemp[playerid][pMechFuel] = 0;
 	}
-	// ====== Развозчики
+	// ====== Seleqcioneri
 	if(GetPVarInt(playerid, "ProductID") > 0)
 	{
  		ProductInfo[GetPVarInt(playerid, "ProductID")][pStatus] = 0;
@@ -593,10 +593,10 @@ public OnPlayerDisconnect(playerid, reason)
 	        frmt_worked[100];
 	        
 		if(PI[playerid][pDaysSalary] > 0)
-			format(frmt_worked, sizeof frmt_worked, "Вы положили щебень. {42B02C}+$240{FFFFFF} к зарплате. Заработано: {FF9900}$%d", temp_job_amount[playerid]);
+			format(frmt_worked, sizeof frmt_worked, "Tqven Gadaagdet Xreshi. {42B02C}+$240{FFFFFF} Daemata Xelfass. Gamomushavebulia: {FF9900}$%d", temp_job_amount[playerid]);
 			
 		else
-			format(frmt_worked, sizeof frmt_worked, "Вы положили щебень. {42B02C}+$120{FFFFFF} к зарплате. Заработано: {FF9900}$%d", temp_job_amount[playerid]);
+			format(frmt_worked, sizeof frmt_worked, "Tqven Gadaagdet Xreshi. {42B02C}+$120{FFFFFF} Daemata Xelfass. Gamomushavebulia: {FF9900}$%d", temp_job_amount[playerid]);
 
 	    SendClientMessage(playerid, COLOR_WHITE, frmt_worked);
 		PI[playerid][pPointsRoad] += 3;
@@ -610,7 +610,7 @@ public OnPlayerDisconnect(playerid, reason)
 			{
 		        PI[playerid][pQuestStatus] = 0;
 		        UpdatePlayerData(playerid, "QuestStatus", PI[playerid][pQuestStatus]);
-		    	SendClientMessage(playerid, COLOR_WHITE, !"{DC143C}[QUEST] {FFFFFF}Вы перенесли 20 тележек. Отправляйтесь к Саймону");
+		    	SendClientMessage(playerid, COLOR_WHITE, !"{DC143C}[QUEST] {FFFFFF}Tqven Gadaitanet 20 Urika. Midit Guramastan");
 			}
 		}
 
@@ -670,7 +670,7 @@ public OnPlayerDisconnect(playerid, reason)
         RoadCP[playerid] = checkpoint+1;
 		
 		temp_job_status[playerid] = 2;
-		SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Отвезите щебень на место стройки");
+		SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Miitanet Xreshi Msheneblobis Adgilas");
 		SetPlayerAttachedObject(playerid, 1, 2060, 1, -0.59, 1.616571, -0.065124, 76.480148, 102.781570, 190.952545, 1.1, 0.5, 1.0);
 		temp_job_time[playerid] = 2;
 		for(new i = 0; i < 4; i ++)
@@ -699,7 +699,7 @@ public OnPlayerDisconnect(playerid, reason)
 	{
 		GameTextForPlayer(playerid, "~r~FAIL", 1000, 1);
 		temp_auto_amount[playerid] = 1;
-		return SendClientMessage(playerid, COLOR_GREY, !"Вы потеряли детали по дороге");
+		return SendClientMessage(playerid, COLOR_GREY, !"Tqven Dakarget Nawilebi Gzashi");
 	}
 	
 
@@ -708,7 +708,7 @@ public OnPlayerDisconnect(playerid, reason)
 		
 	if(randombreak > 47)
 	{
-		SendClientMessage(playerid, COLOR_GREY, !"Вы сделали бракованную запчасть");
+		SendClientMessage(playerid, COLOR_GREY, !"Tqven Gaaketet Dabrakuli Nawili");
 		GameTextForPlayer(playerid, "~r~FAIL", 1000, 1);
 		temp_auto_amount[playerid] = 1;
 		return 1;
@@ -721,7 +721,7 @@ public OnPlayerDisconnect(playerid, reason)
     
 	temp_auto_model[playerid] = 0;
 
-	SendClientMessage(playerid, COLOR_WHITE, !"Вы собрали запчасть. Отнесите ее на склад");
+	SendClientMessage(playerid, COLOR_WHITE, !"Tqven Aawyet Nawili, Miitanet is Sawyobshi");
 	ApplyAnimation(playerid, !"CARRY", !"crry_prtial", 4.0, 1, 1, 1, 1, 1, 1);
 	SetPlayerCheckpoint(playerid, 2564.0759, -1292.8741, 1044.1250, 2.0);
 	return 1;
@@ -732,14 +732,14 @@ public OnPlayerDisconnect(playerid, reason)
 	new
 	    frmt_action[128];
 	    
-	format(frmt_action, sizeof frmt_action, "{7AC71F}[Успешно] {FFC800}%s{FFFFFF} провел(а) вам курс лечения", PN(sender));
+	format(frmt_action, sizeof frmt_action, "{7AC71F}[Warmatebulad] {FFC800}%s{FFFFFF} Chagitarat Tqven Gamojanmrtelebis Kursi ", PN(sender));
     SendClientMessage(playerid, COLOR_WHITE, frmt_action);
-	format(frmt_action, sizeof frmt_action, "%s сделал(а) операцию %s", PN(sender), PN(playerid));
+	format(frmt_action, sizeof frmt_action, "%s Gaaketa Operacia %s", PN(sender), PN(playerid));
     ProxDetector(25, sender, frmt_action, COLOR_ME);
 
 	Delete3DTextLabel(temp_disease_text[playerid]);
 	PI[playerid][pDisease] = 0;
-	GiveMoney(sender, 1500, "операция");
+	GiveMoney(sender, 1500, "Operacia");
 	UpdatePlayerData(playerid, "Disease", PI[playerid][pDisease]);
 	TogglePlayerControllable(playerid,true);
 	ClearAnimations(sender);
@@ -751,7 +751,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 	if(GetPlayerState(playerid) == PLAYER_STATE_SPECTATING) return 1;
 	if((areaid == arTruckLoadOne || areaid == arTruckLoadTwo || areaid == arTruckLoadThree) && PI[playerid][pJob] == JOB_TRUCKER && pTemp[playerid][pTruckID] != INVALID_VEHICLE_ID)
 	{
-		SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Чтобы начать загрузку - {63BD4E}Посигнальте");
+		SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Tu Gnebavt Chatvirtvis Dawyeba - {63BD4E}Daasignalet");
 	}
  	if(areaid == Ships[playerid] && GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
     {
@@ -764,7 +764,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
     if(areaid == gHealExit)
 	{
  		if(PI[playerid][pHealth] < 80.0)
-		 	return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы не можете выйти из больницы, пока не вылечитесь");
+		 	return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven Ver Shedzlebt Saavadmkofodan Gasvlas, Sanam Ar Gamojanmrteldebit");
 		 	
 		new world = GetPlayerVirtualWorld(playerid);
 		SetPlayerInterior(playerid, 0);
@@ -800,41 +800,41 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 
 	    new
 			frmt_info[2300];
-		strcat(frmt_info,"{FFFFFF}Общие положения:\n");
-		strcat(frmt_info,"1. Разрешенная скорость передвижения для т/с, по городу - 60 км/ч, за городом - 110 км/ч, на автомагистралях - 150 км/ч.\n");
-		strcat(frmt_info,"2. При необходимости, водитель обязан пропустить т/с со спец.сигналом (Полиция,Служба спасения,Скорая помощь) , а именно: постепенно снижая скорость, прижаться к обочине.\n");
-		strcat(frmt_info,"3. Перекрестки в штате являются нерегулируемыми. Разрешается проезд на запрещающие сигналы светофора.\n");
-		strcat(frmt_info,"4. По требованию работника правоoхранительных органов, водитель обязан остановиться и выполнить все перечисленные требования сотрудника правоохранительных органов.\n");
-		strcat(frmt_info,"5. В случае возникновения ДТП(Дорожно-транспортного происшествия) водитель обязан: \n");
-		strcat(frmt_info,"  а) оставаться на месте ДТП;\n");
-		strcat(frmt_info,"  б) Вызвать сотрудников правоохоранительных органов;\n");
-		strcat(frmt_info,"  в) Вызвать сотрудников скорой помощи, если того требует ситуация.\n");
-		strcat(frmt_info,"6. Водитель обязан пропускать пешеходов, в специальных местах для перехода (перекрестки, специальная разметка).\n");
-		strcat(frmt_info,"7. Водитель обязан осуществлять парковку транспортного средства только на стоянках, либо на обочине, заезжая при этом только 2-мя колесами.\n");
-		strcat(frmt_info,"Запрещается:\n");
-		strcat(frmt_info,"1.  Выезд на полосу встречного движения при очевидной угрозе лобового столкновения.\n");
-		strcat(frmt_info,"2.  Экстренное торможение без везкой причины, в случае возникновения поломки т/с, по мере возможности Вам следует:\n");
-		strcat(frmt_info," а) прижаться к обочине;\n");
-		strcat(frmt_info," б) включить сигнал, оповещающий об аварийной ситуации.\n");
-		strcat(frmt_info,"3. Обгон впереди движущегося т/с с правой стороны,обгон разрешен лишь в случае поворота впереди движущегося т/с.\n");
-		strcat(frmt_info,"4. Нарушение установленного скоростного лимита.\n");
-		strcat(frmt_info,"5. Управление транспортным средством в нетрезвом виде.\n");
-		strcat(frmt_info,"6. Разворот в туннелях строго запрещен.\n");
-		strcat(frmt_info,"7. Движение транспортного средства задним ходом разрешается при условии, что этот маневр будет безопасен и не создаст помех другим участникам движения.\n");
-		strcat(frmt_info,"При необходимости водитель должен прибегнуть к помощи других лиц.\n");
-		strcat(frmt_info,"8. На автомагистралях запрещается: движение задним ходом и учебная езда.");
-        ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Правила дорожного движения", frmt_info, !"Закрыть", !"");
+		strcat(frmt_info,"{FFFFFF}Saerto Mdgomareoba:\n");
+		strcat(frmt_info,"1. Avtomobilis Dashvebuli Sichkare Qalaqshi - 60 KM/St, Qalaq Garet - 110 KM/St, Avtomagistralze - 150 KM/St.\n");
+		strcat(frmt_info,"2. Sachiroebis Shemtxvevashi Mdzgoli Valdebulia Gza Dautmos Specialuri Signalis Mqone Avtomobils (Policia;Saxandzro da Saswrafo) , Konkretulad: Nela Sheacheros Manqana, Da Gadaayenos Uaxloes Trotuartan.\n");
+		strcat(frmt_info,"3. Gzajvaredinebi Shtatshi Aris Araregulirebuli. Dashvebulia Shuqnishis Amkrdazlav Nishanze Modzraoba.\n");
+		strcat(frmt_info,"4. Samartaldamcavi Organos Tanamshromlis Motxovnis Shemtxvevashi, Mdzogli Valdebulia Daemorchilos Mis Nebismier Motxovnas.\n");
+		strcat(frmt_info,"5. Avtoavariis shemtxvevashi Mdzgoli Valdebulia: \n");
+		strcat(frmt_info,"  a) Darches Avariis Adgilas;\n");
+		strcat(frmt_info,"  b) Gamoidzaxos Samartaldamcvelebi;\n");
+		strcat(frmt_info,"  c) Gamoidzaxos Saswrafo Daxmareba Tu Situacia Moitxovs Amas.\n");
+		strcat(frmt_info,"6. Mdzgoli Valdebulia Gaataros Fexit Mosiaruleebi,Specialur Adgilebshi(Zebraze,Ezoebshi)  .\n");
+		strcat(frmt_info,"7. Mdzgoli Valdebulia Gaacheros Manqana Mxolod Parkingis Teritoriaze, Trotuartan, aseve Sheayenos Manqana Trotuarze Ori borblit Sadac Sachiroba Moitxovs.\n");
+		strcat(frmt_info,"Akrdzalulia:\n");
+		strcat(frmt_info,"1.  Gasvla Sawinaagdmego Xazze Rodesac Tvaltaxedvis Are Ar Aris Sakmarisi.\n");
+		strcat(frmt_info,"2.  Ekstremaluri Damuxrucheba Arasachiro Shemtxvevashi, Avtomobilis Dazianebisas, Shedzlebisdagvarad unda:\n");
+		strcat(frmt_info," a) Gadaayenot Trotuartan;\n");
+		strcat(frmt_info," b) Chartot Avariuli Cim-cimebi.\n");
+		strcat(frmt_info,"3. Marjvena Mxridan Avtomobilze Gaswreba Akrdzalulia Garda Im Shemtxvevisa Tu Mdzgoli Uxvevs Sawinaagmdego Mimartulebit\n");
+		strcat(frmt_info,"4. Sichqaris Gadacharbeba.\n");
+		strcat(frmt_info,"5. Avtomobilis Martva Arafxizel Mdgomareobashi.\n");
+		strcat(frmt_info,"6. Mobruneba Gvirabebshi Sastikad Akrdzalulia.\n");
+		strcat(frmt_info,"7. Ukusvlit Modzraoba Dashvebulia Im Shemtxvevashi, Tu Manevri Iqneba Usafrtxo Da Xels Ar Sheushlis Sxva avtomobilebs Gadaadgilebashi.\n");
+		strcat(frmt_info,"Aucileblobis Shmemtxvevashi Mdzgoli Valdebulia Xeli Sheuwyos Sxvebs.\n");
+		strcat(frmt_info,"8. Avtomagistralze DAUSHVEBELIA Ukusvlit Siaruli Da Saswavlo Avtomobilebis Gadaadgileba.");
+        ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Martvis Mowmobis Testi", frmt_info, !"Daxurva", !"");
 
 	}
 
 	else if(areaid >= gJobInvite[0] && areaid <= gJobInvite[2])
 	{
-		ShowPlayerDialogEx(playerid, 346, DIALOG_STYLE_TABLIST_HEADERS, !"Устройство на работу", !"{FFFFFF}Наименование\t{FFFFFF}Требования\n{FF7319}1.{FFFFFF} Водитель автобуса\t2 уровень\n{FF7319}2.{FFFFFF} Таксист\t3 уровень\n{FF7319}3.{FFFFFF} Механик\t3 уровень\n{FF7319}4.{FFFFFF} Развозчик заказов\t3 уровень\n{FF7319}5.{FFFFFF} Дальнобойщик\t4 уровень", !"OK", !"Отмена");
+		ShowPlayerDialogEx(playerid, 346, DIALOG_STYLE_TABLIST_HEADERS, !"Samsaxurshi Mowyoba", !"{FFFFFF}Daqiraveba\t{FFFFFF}Motxovnileba\n{FF7319}1.{FFFFFF} Avtobusis Mdzgoli\t2 Klasis\n{FF7319}2.{FFFFFF} Taqsisti\t3 Klasis\n{FF7319}3.{FFFFFF} Meqaniki\t3 Klasis\n{FF7319}4.{FFFFFF} Distributori\t3 Klasis\n{FF7319}5.{FFFFFF} Gadamzidi\t4 Klasis", !"Dadastureba", !"Uaryofa");
 	}
 	else if(areaid == gGangStockArea)
 	{
 	    if(PI[playerid][pFraction]-2 == GetPlayerVirtualWorld(playerid)-1)
-			ShowPlayerDialogEx(playerid, 612, DIALOG_STYLE_LIST, !"Общак", !"Единицы оружия\nПатроны\nДеньги\nНаркотики", !"Далее", !"Отмена");
+			ShowPlayerDialogEx(playerid, 612, DIALOG_STYLE_LIST, !"Sacavi", !"Iaragis Raodenoba\nTyviebi\nFuli\nNarkotiki", !"Gagrdzeleba", !"Uari");
 	}
 	else if(areaid == gMafiaStockArea)
 	{
@@ -859,22 +859,22 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 				gMafiaStorage[mafiaid][1] += ammo;
 				UpdateTextMafia();
 			}
-			ShowPlayerDialogEx(playerid, 654, DIALOG_STYLE_LIST, !"Общак", !"Единицы оружия\nПатроны\nДеньги\nНаркотики", !"Далее", !"Отмена");
+			ShowPlayerDialogEx(playerid, 654, DIALOG_STYLE_LIST, !"Sacavi", !"Iaragebis Raodenoba\nTyviebi\nFuli\nNarkotiki", !"Gagrdzeleba", !"Uari");
 		}
 	}
 	else if(areaid == gMafiaDrugs)
 	{
 		if(!IsAMafia(playerid))
-		    return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Доступно только мафиям");
+		    return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Dashvebulia Mxolod Mafiisatvis");
 
 		if(InJob[playerid] > 0 && InJob[playerid] != 9)
-		    return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы уже где-то работаете");
+		    return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven Ukve Sadgac Mushaobt");
 		    
 		if(InJob[playerid] != 9)
-			ShowPlayerDialogEx(playerid, 699, DIALOG_STYLE_INPUT, !"Ферма", !"{FFFFFF}Аренда поля для сбора наркотиков: {33AA00}1000${FFFFFF}/Минута\n\nВведите время аренды:\n\n{AFAFAF}Значение должно быть от 5 до 20 минут", !"Аренда", !"Отмена");
+			ShowPlayerDialogEx(playerid, 699, DIALOG_STYLE_INPUT, !"Ferma", !"{FFFFFF}Mdelos qiraoba narkotikebis asakrefad: {33AA00}1000${FFFFFF}/wuti\n\nSheiyvanet qiraobis dro:\n\n{AFAFAF}Dro unda iyos 5 - dan 20 - amde", !"Qiraoba", !"Uari");
 
 		else
-			ShowPlayerDialogEx(playerid, 700, DIALOG_STYLE_MSGBOX, !"Ферма", !"{FFFFFF}Вы действительно хотите завершить аренду поля?", !"Да", !"Отмена");
+			ShowPlayerDialogEx(playerid, 700, DIALOG_STYLE_MSGBOX, !"Ferma", !"{FFFFFF}Tqven nagdad gsurt mdelos qiraoba?", !"Diax", !"Uari");
 	}
 	else if(areaid >= gBarrier_Area[0] && areaid <= gBarrier_Area[51])
 	{
@@ -892,7 +892,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 				    case 3: if(PI[playerid][pSubfraction] != 2 && PI[playerid][pRank] < 11) return 1;
 				}
 
- 	 			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Нажмите клавишу {FFE805}быстрого бега{FFFFFF}, чтобы открыть/закрыть дверь");
+ 	 			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Daachiret gilaks {FFE805}Chkari sirbilis{FFFFFF}, Imisatvis rom gaagot/Daketot karebi");
                 SetPVarInt(playerid, "doortext", true);
 			}
 		    if((GetBarrierID(playerid) >= 12 && GetBarrierID(playerid) <= 23) && GetPVarInt(playerid, "doortext") == 0)
@@ -907,7 +907,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 				    case 12: if(PI[playerid][pSubfraction] != 3 && PI[playerid][pRank] < 11) return 1;
 				}
 
- 	 			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Нажмите клавишу {FFE805}быстрого бега{FFFFFF}, чтобы открыть/закрыть дверь");
+ 	 			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Daachiret gilaks {FFE805}Chkari sirbilis{FFFFFF}, Imisatvir rom gaagot/Daketot karebi");
                 SetPVarInt(playerid, "doortext", true);
 			}
 		    if((GetBarrierID(playerid) >= 24 && GetBarrierID(playerid) <= 35) && GetPVarInt(playerid, "doortext") == 0)
@@ -922,7 +922,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 				    case 3: if(PI[playerid][pSubfraction] != 2 && PI[playerid][pRank] < 11) return 1;
 				}
 
- 	 			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Нажмите клавишу {FFE805}быстрого бега{FFFFFF}, чтобы открыть/закрыть дверь");
+ 	 			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Daachiret gilaks {FFE805}Chkari sirbilis{FFFFFF}, Imisatvis rom gaagot/Daketot karebi");
                 SetPVarInt(playerid, "doortext", true);
 			}
 		    if((GetBarrierID(playerid) >= 36 && GetBarrierID(playerid) <= 39) && GetPVarInt(playerid, "doortext") == 0)
@@ -930,7 +930,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 				if(PI[playerid][pFraction] != 11)
 				    return 1;
 
- 	 			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Нажмите клавишу {FFE805}быстрого бега{FFFFFF}, чтобы открыть/закрыть дверь");
+ 	 			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Daachiret gilaks{FFE805}Chkari sirbilis{FFFFFF}, Imisatvis rom gaagot/Daketot karebi");
                 SetPVarInt(playerid, "doortext", true);
 			}
 		}
@@ -946,17 +946,17 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
         new grassid = gFermGrassArea[0] - areaid;
         
 		if(pTemp[playerid][pGrass] == grassid+1)
-		    return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы недавно собирали урожай с этого куста, подойдите к другому");
+		    return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven axlaxans aiget am adgilidan narkotiki , midit sxvastan");
 		
 		if(!PI[playerid][pBag])
 		{
 			if(PI[playerid][pDrugs]+20 > 500)
-			    return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы не можете унести больше наркотиков");
+			    return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar shegidzliat meti narkotikis wageba");
 		}
 		else
 		{
 			if(PI[playerid][pDrugs]+20 > 1000)
-			    return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы не можете унести больше наркотиков");
+			    return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar shegidzliat meti narkotikis wageba");
 		
 		}
 		
@@ -989,13 +989,13 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 						gArmyWarehouse[armyid][0] += gunamount;
 						
 					else
-					    SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}На складе недостаточно места под боеприпасы");
+					    SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Sawyobshi ar aris sakmarisi adgilebi sabrdzolo masalisatvis");
 						
 					if(gArmyWarehouse[armyid][1] + ammo <= 120000)
 						gArmyWarehouse[armyid][1] += ammo;
 						
 					else
-						SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}На складе недостаточно места под патроны");
+						SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Sawyobshi ar aris sakmarisi adgilebi tyviebisatvis");
 						
 				}
 			}
@@ -1005,7 +1005,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 				if(GetPlayerVirtualWorld(playerid) == 1 || GetPlayerVirtualWorld(playerid) == 2)
 				{
 				    if(gArmyWarehouse[armyid][0] - 300 < 0 || gArmyWarehouse[armyid][1] - 300 < 0)
-						return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}На складе недостаточно патронов или боеприпасов");
+						return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Sawyobshi ar aris  tyviebi da sabrdzolo masalebi");
 
 					gArmyWarehouse[armyid][0] -= 300;
 					gArmyWarehouse[armyid][1] -= 300;
@@ -1023,14 +1023,14 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		else if(IsAMafia(playerid) && pTemp[playerid][pWarehouseRob])
 		{
 		    if(GetPVarInt(playerid, "carrygun"))
-				return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У вас уже есть ящик с оружием");
+				return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ukve gaqvt yuti iaragebit");
 
 			if(!GetPVarInt(playerid, "carrygun"))
 			{
 				if(GetPlayerVirtualWorld(playerid) == 1 || GetPlayerVirtualWorld(playerid) == 2)
 				{
 				    if(gArmyWarehouse[armyid][0] - 300 < 0 || gArmyWarehouse[armyid][1] - 300 < 0)
-						return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}На складе недостаточно патронов или боеприпасов");
+						return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Sawyobshi ar aris tyviebi da sabrdzolo masalebi ");
 
 					gArmyWarehouse[armyid][0] -= 300;
 					gArmyWarehouse[armyid][1] -= 300;
@@ -1081,13 +1081,13 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 						gPDWarehouse[pdid][0] += gunamount;
 
 					else
-					    SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}На складе недостаточно места под боеприпасы");
+					    SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Sawyobshi ar aris sakmarisi adgilebi sabrdzolo masalisatvis");
 
 					if(gPDWarehouse[pdid][1] + ammo <= 50000)
 						gPDWarehouse[pdid][1] += ammo;
 
 					else
-						SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}На складе недостаточно места под патроны");
+						SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Sawyobshi ar aris sakmarisi adgilebi tyviebisatvis");
 
 				}
 			}
@@ -1115,13 +1115,13 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 						gFBIWarehouse[0] += gunamount;
 
 					else
-					    SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}На складе недостаточно места под боеприпасы");
+					    SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Sawyobshi ar aris sakmarisi adgilebi sabrdzolo masalistvis");
 
 					if(gFBIWarehouse[1] + ammo <= 50000)
 						gFBIWarehouse[1] += ammo;
 
 					else
-						SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}На складе недостаточно места под патроны");
+						SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Sawyovshi ar aris sakmarisi adgilebi tyviebisatvis");
 
 				}
 			}
@@ -1159,12 +1159,12 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
             if(PI[playerid][pHealth] < 100)
             {
 				temp_eat[playerid] = 1;
-				SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Введите {32CD32}/eat{FFFFFF}, чтобы употребить купленное");
-				SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Чтобы выбросить продукт, введите {32CD32}/put");
+				SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Sheiyvanet {32CD32}/eat{FFFFFF}, imisatvis rom shechamot");
+				SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Imisatvis rom gadayarot nayidi nivtebi {32CD32}/put");
 				SetPlayerSpecialAction(playerid, 25), SetPlayerAttachedObject(playerid,0,2215,3,0.232999,-0.376998,-0.408999,54.199886,-35.700153,-35.000019,1.000000,1.000000,1.000000);
 			}
 		    else
-		        SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы не голодны");
+		        SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar xart mshieri");
 		}
 
 	}
@@ -1203,13 +1203,13 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 					gHallWarehouse[area][0] += gunamount;
 
 				else
-				    SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}На складе недостаточно места под боеприпасы");
+				    SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Sawyobshi ar aris sakmarisi adgilebi  sabrdzolo masalisatvis");
 
 				if(gHallWarehouse[area][1] + ammo <= 50000)
 					gHallWarehouse[area][1] += ammo;
 
 				else
-					SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}На складе недостаточно места под патроны");
+					SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Sawyobshi ar aris sakmarisi adgilebi tyviebisatvis");
 
 
 			}
@@ -1218,31 +1218,31 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 	
 	else if(areaid >= gHallCard[0] && areaid <= gHallCard[2])
 	{
- 		ShowPlayerDialogEx(playerid, 571, DIALOG_STYLE_LIST, !"Покупка лицензий", !"{FF7319}1.{FFFFFF} Купить лицензию на оружие\n{FF7319}2.{FFFFFF} Купить билет рекордсмена", !"Далее", !"Закрыть");
+ 		ShowPlayerDialogEx(playerid, 571, DIALOG_STYLE_LIST, !"Licenziebis giydva", !"{FF7319}1.{FFFFFF} Iyidot licenzia iaragze\n{FF7319}2.{FFFFFF} Iyidet rekordsmenis bileti", !"Shemdeg", !"Daxurva");
 	}
 	else if(areaid >= gHallFamily[0] && areaid <= gHallFamily[2])
 	{
-	    ShowPlayerDialogEx(playerid, 580, DIALOG_STYLE_LIST, !"Семьи", !"{FF7319}1.{FFFFFF} Информация о семье\n{FF7319}2.{FFFFFF} Создание семьи\n{FF7319}3.{FFFFFF} Список семей", !"Далее", !"Закрыть");
+	    ShowPlayerDialogEx(playerid, 580, DIALOG_STYLE_LIST, !"Ojaxebi", !"{FF7319}1.{FFFFFF} Informacia ojaxze\n{FF7319}2.{FFFFFF} Ojaxis sheqmna\n{FF7319}3.{FFFFFF} Ojaxebis sia", !"Shemdeg", !"Daxurva");
 	}
 	else if(areaid >= gHallInfo[0] && areaid <= gHallInfo[2])
 	{
 	    new
 	        frmt_hall_info[500];
 	        
-		format(frmt_hall_info, sizeof frmt_hall_info, "Казна: {33AA33}%d${FFFFFF}\nНалог на бизнес: {A52A2A}%d%%{FFFFFF}\nНалог на зарплату гос.организаций: {A52A2A}%d%%{FFFFFF}\nПенсионный возраст: {A52A2A}%d{FFFFFF} лет в штате\nРазмер Пенсии: {33AA33}%d$", OrgInfo[9][oMoney], gBusinessNalog, gSalaryNalog, gPensionAge, gPension);
+		format(frmt_hall_info, sizeof frmt_hall_info, "Xazina: {33AA33}%d${FFFFFF}\nGadasaxadi biznesze: {A52A2A}%d%%{FFFFFF}\nGadasaxadi saxelmwifo organizaciebis xelfasze: {A52A2A}%d%%{FFFFFF}\nSapensio asaki: {A52A2A}%d{FFFFFF} Wlebi shtatshi\nPensiis odenoba: {33AA33}%d$", OrgInfo[9][oMoney], gBusinessNalog, gSalaryNalog, gPensionAge, gPension);
 	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_LIST, !"Информация о штате {0066FF}Virtual.", frmt_hall_info, !"Закрыть", !"");
 	}
 	else if(areaid >= gHallCharity[0] && areaid <= gHallCharity[2])
 	{
- 		ShowPlayerDialogEx(playerid, 577, DIALOG_STYLE_LIST, !"Пожертвование", !"{FF7319}1.{FFFFFF} Пожертвовать средства\n{FF7319}2.{FFFFFF} Список крупнейших благотворителей", !"Далее", !"Закрыть");
+ 		ShowPlayerDialogEx(playerid, 577, DIALOG_STYLE_LIST, !"Qvelmoqmedeba", !"{FF7319}1.{FFFFFF} Tanxis chadeba qvelmoqmedebashi\n{FF7319}2.{FFFFFF} Didi qvelmoqmedebis sia", !"Shemdeg", !"Daxurva");
 	}
 	else if(areaid >= gHallEstate[0] && areaid <= gHallEstate[2])
 	{
 	    new
 	        frmt_estate_info[400];
 	        
-		format(frmt_estate_info, sizeof frmt_estate_info, "{FFFFFF}Дома: {33AA33}%d{FFFFFF} (Освобождается: {FF0000}%d{FFFFFF})\n{FFFFFF}Бизнесы: {33AA33}%d{FFFFFF} (Освобождается: {FF0000}%d{FFFFFF})\n{FFFFFF}АЗС: {33AA33}%d{FFFFFF} (Освобождается: {FF0000}%d{FFFFFF})", gHouseFree, gHouseSeal, gBusinessFree, gBusinessSeal, gFillingFree, gFillingSeal);
-	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Свободное имущество", frmt_estate_info, !"Закрыть", !"");
+		format(frmt_estate_info, sizeof frmt_estate_info, "{FFFFFF}Saxli: {33AA33}%d{FFFFFF} (Tavisufldeba: {FF0000}%d{FFFFFF})\n{FFFFFF}Biznesebi: {33AA33}%d{FFFFFF} (Tavisufldeba: {FF0000}%d{FFFFFF})\n{FFFFFF}BGS: {33AA33}%d{FFFFFF} (Tavisufldeba: {FF0000}%d{FFFFFF})", gHouseFree, gHouseSeal, gBusinessFree, gBusinessSeal, gFillingFree, gFillingSeal);
+	    ShowPlayerDialogEx(playerid, INVALID_DIALOG_ID, DIALOG_STYLE_MSGBOX, !"Tavisufali qoneba", frmt_estate_info, !"Daxurva", !"");
 	}
 	else if(areaid >= gPDGunArea[0] && areaid <= gPDGunArea[2])
 	{
@@ -1257,8 +1257,8 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			}
 			if(pdid == -1) return 1;
 			if(PI[playerid][pSubfraction] != pdid) return 1;
-			if(PI[playerid][pGunLic] != YES_LICENSE) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У Вас нет лицензии на оружие");
-			ShowPlayerDialogEx(playerid, 437, DIALOG_STYLE_LIST, !"Выберите оружие", !"Silenced Pistol\nDesert Eagle\nMP5\nShotgun\nM4\nДубинка\nБронежилет", !"Выбор", !"Отмена");
+			if(PI[playerid][pGunLic] != YES_LICENSE) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar gaqvt iaragis licenzia");
+			ShowPlayerDialogEx(playerid, 437, DIALOG_STYLE_LIST, !"Amoirchiet iaragi", !"Silenced Pistol\nDesert Eagle\nMP5\nShotgun\nM4\nXelketi\nBronejileti", !"Archeva", !"Gauqmeba");
 		}
 		return 1;
 	}
@@ -1268,9 +1268,9 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			return 1;
 
 		if(PI[playerid][pGunLic] != YES_LICENSE)
-	        return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У Вас нет лицензии на оружие");
+	        return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar gaqvt iaragis licenzia");
 		        
-		ShowPlayerDialogEx(playerid, 436, DIALOG_STYLE_LIST, !"Выберите оружие", !"Silenced Pistol\nDesert Eagle\nMP5\nShotgun\nM4\nДубинка\nБронежилет", !"Выбор", !"Отмена");
+		ShowPlayerDialogEx(playerid, 436, DIALOG_STYLE_LIST, !"Amoirchiet iaragi", !"Silenced Pistol\nDesert Eagle\nMP5\nShotgun\nM4\nXelketi\nBronejileti", !"Archeva", !"Gauqmeba");
 		return 1;
 	}
 	else if(areaid >= gMafiaGunArea[0] && areaid <= gMafiaGunArea[2])
@@ -1291,9 +1291,9 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			return 1;
 
 		if(PI[playerid][pGunLic] != YES_LICENSE)
-	        return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У Вас нет лицензии на оружие");
+	        return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar gaqvt iaragis licenzia");
 	        
-		ShowPlayerDialogEx(playerid, 446, DIALOG_STYLE_LIST, !"Выберите оружие", !"Desert Eagle\nMP5\nShotgun\nM4\nCountry Rifle", !"Выбор", !"Отмена");
+		ShowPlayerDialogEx(playerid, 446, DIALOG_STYLE_LIST, !"Amoirchiet iaragi", !"Desert Eagle\nMP5\nShotgun\nM4\nCountry Rifle", !"Archeva", !"Gauqmeba");
 
 	}
 	else if(areaid >= gHallGunArea[0] && areaid <= gHallGunArea[3])
@@ -1315,9 +1315,9 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			    return 1;
 
 			if(PI[playerid][pGunLic] != YES_LICENSE)
-		        return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У Вас нет лицензии на оружие");
+		        return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar gaqvt iaragis licenzia");
 		        
-			ShowPlayerDialogEx(playerid, 438, DIALOG_STYLE_LIST, !"Выберите оружие", !"Desert Eagle\nShotgun\nДубинка\nБронежилет", !"Выбор", !"Отмена");
+			ShowPlayerDialogEx(playerid, 438, DIALOG_STYLE_LIST, !"Amoirchiet iaragi", !"Desert Eagle\nShotgun\nXelketi\nBronejileti", !"Archeva", !"Gauqmeba");
 		}
 	}
 	else if(areaid == gHallMoneyArea)
@@ -1325,7 +1325,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		if(PI[playerid][pFraction] != 10 || PI[playerid][pSubfraction] != 0 || PI[playerid][pRank] < 11)
 		    return 1;
 
-		ShowPlayerDialogEx(playerid, 479, DIALOG_STYLE_LIST, !"Казна штата", !"{FF7319}1.{FFFFFF} Выделение денег организациям\n{FF7319}2.{FFFFFF} Пенсионный фонд\n{FF7319}3.{FFFFFF} Выдача премий\n{FF7319}4.{FFFFFF} Изменение налогообложения", !"Далее", !"Отмена");
+		ShowPlayerDialogEx(playerid, 479, DIALOG_STYLE_LIST, !"Shtatis xazina", !"{FF7319}1.{FFFFFF} Organizaciebisatvis fulis gamoyofa\n{FF7319}2.{FFFFFF} Sapensio fondi\n{FF7319}3.{FFFFFF} Premiebis gacema\n{FF7319}4.{FFFFFF} Gdasaxadebis shecvla", !"Shemdeg", !"Gauqmeba");
 	}
 	else if(areaid >= gGangEnter[0] && areaid <= gGangEnter[4])
 	{
@@ -1345,7 +1345,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			return 1;
 
 		if(PI[playerid][pFraction] - 2 != gangid && !PI[playerid][pGangKey])
-			return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У вас нет ключа от дома банды");
+			return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar gaqvt bandis saxlis gasagebi");
 
 		SetPlayerInterior(playerid, 12);
 		SetPlayerVirtualWorld(playerid, gangid+1);
@@ -1373,7 +1373,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			return 1;
 			
 		if(PI[playerid][pLevel] < 3)
-			return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы должны прожить 3 года в штате чтобы попасть в это заведение");
+			return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven unda icxovrot 3 weli shtatshi imisatvis rom moxvdet am shenobashi");
 
 		SetPlayerInterior(playerid, 10);
 		SetPlayerVirtualWorld(playerid, 1);
@@ -1410,7 +1410,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 	        TotalCrupie--;
 	        InJob[playerid] = 0;
 
-			SendClientMessage(playerid, COLOR_WHITE,"{7AC71F}[Успешно] {FFFFFF}Вы закончили работу крупье");
+			SendClientMessage(playerid, COLOR_WHITE,"{7AC71F}[Warmatebulad] {FFFFFF}Tqven daabtavret dileris samsaxuri");
 		}
 	}
 	else if(areaid == gCasinoCrupie)
@@ -1419,13 +1419,13 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		if(InJob[playerid] != 8)
 		{
 		    if(PI[playerid][pLevel] < 5)
-		        return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы должны прожить 5 лет в штате чтобы устроиться на работу крупье");
+		        return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven unda icxovrot 5 weli shtatshi imisatvis rom imushaot dilerad");
 
-	    	ShowPlayerDialogEx(playerid, 439, DIALOG_STYLE_MSGBOX, !"Казино", !"{FFFFFF}Вы действительно хотите устроиться на работу крупье?", !"Да", !"Отмена");
+	    	ShowPlayerDialogEx(playerid, 439, DIALOG_STYLE_MSGBOX, !"Kazino", !"{FFFFFF}Tqven nagdad gsurt daiwyot mushaoba dillerad?", !"Dadstureba", !"Gauqmeba");
 		}
 		
 		else
-		    ShowPlayerDialogEx(playerid, 442, DIALOG_STYLE_MSGBOX, !"Казино", !"{FFFFFF}Вы хотите уволиться с работы крупье?", !"Да", !"Отмена");
+		    ShowPlayerDialogEx(playerid, 442, DIALOG_STYLE_MSGBOX, !"Kazino", !"{FFFFFF}Gnebavt dileris samsaxuridan wamosvla?", !"Dadastureba", !"Gauqmeba");
 
 	}
 
@@ -1540,14 +1540,14 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 	}
 	else if(areaid >= gDiseaseArea[0] && areaid <= gDiseaseArea[2])
 	{
-	    if(temp_inject_need[playerid] == true || temp_operation_need[playerid] == true) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы уже проходите курс лечения");
-	    if(!PI[playerid][pDisease]) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы не больны!");
+	    if(temp_inject_need[playerid] == true || temp_operation_need[playerid] == true) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ukve gadixart mkurnalobis kurss");
+	    if(!PI[playerid][pDisease]) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven janmrteli xart!");
 	        
 	    new frmt_disease[154];
 	        
-		if(PI[playerid][pDisease] == 1 || PI[playerid][pDisease] == 2) format(frmt_disease, sizeof frmt_disease, "{FFFFFF}Вы больны болезнью {FF0000}%s{FFFFFF}.\nСтоимость лечения {00AB0C}%d$\n{FFFFFF}Для лечения вам необходимо пройти курс из 5 уколов", gDiseaseName[PI[playerid][pDisease]-1], gDiseasePrice[PI[playerid][pDisease]-1]);
-		else if(PI[playerid][pDisease] == 3 || PI[playerid][pDisease] == 4 || PI[playerid][pDisease] == 5 || PI[playerid][pDisease] == 6) format(frmt_disease, sizeof frmt_disease, "{FFFFFF}Вы больны болезнью {FF0000}%s{FFFFFF}.\nСтоимость лечения {00AB0C}%d$\n{FFFFFF}Для лечения вам необходимо пройти операцию", gDiseaseName[PI[playerid][pDisease]-1], gDiseasePrice[PI[playerid][pDisease]-1]);
-		ShowPlayerDialogEx(playerid, 189, DIALOG_STYLE_MSGBOX, !"Лечение", frmt_disease, !"Оплатить", !"Отмена");
+		if(PI[playerid][pDisease] == 1 || PI[playerid][pDisease] == 2) format(frmt_disease, sizeof frmt_disease, "{FFFFFF}Tqven xart avad  {FF0000}%s{FFFFFF}.\nMkurnalobis kursi {00AB0C}%d$\n{FFFFFF}Aucilebelia gaiarot kursi da gaiketot 5 nemsi", gDiseaseName[PI[playerid][pDisease]-1], gDiseasePrice[PI[playerid][pDisease]-1]);
+		else if(PI[playerid][pDisease] == 3 || PI[playerid][pDisease] == 4 || PI[playerid][pDisease] == 5 || PI[playerid][pDisease] == 6) format(frmt_disease, sizeof frmt_disease, "{FFFFFF}Tqven xart avad {FF0000}%s{FFFFFF}.\nMkurnalobis kursi {00AB0C}%d$\n{FFFFFF}Mkurnalobisatvis aucilebelia chaitarot uperacia", gDiseaseName[PI[playerid][pDisease]-1], gDiseasePrice[PI[playerid][pDisease]-1]);
+		ShowPlayerDialogEx(playerid, 189, DIALOG_STYLE_MSGBOX, !"Mkurnaloba", frmt_disease, !"Gadaxda", !"Gauqmeba");
 
 	}
 	else if(areaid == OperTable)
@@ -1566,34 +1566,34 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 					}
 	            }
 	        }
-	        if(total != 0) ShowPlayerDialogEx(playerid, 190, DIALOG_STYLE_LIST, !"Операционный стол", str, !"Выбор", !"Отмена");
-			else SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}В палате нет больных пациентов");
+	        if(total != 0) ShowPlayerDialogEx(playerid, 190, DIALOG_STYLE_LIST, !"Saoperacio Magida", str, !"Archeva", !"Gauqmeba");
+			else SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Palatashi ar ari avadmyofi pacientebi");
 		}
 	}
 	else if(areaid == gAutoSchool)
 	{
-		ShowPlayerDialogEx(playerid, 710, DIALOG_STYLE_LIST, !"Экзамен", !"Выберите вид транспорта, на который хотите получить лицензию:\n{FF7319}1.{FFFFFF} Наземный транспорт\t{42B02C}500$\n{FF7319}2.{FFFFFF} Воздушный транспорт\t{42B02C}10000$\n{FF7319}3.{FFFFFF} Водный транспорт\t\t{42B02C}3000$", !"OK", !"Отмена");
+		ShowPlayerDialogEx(playerid, 710, DIALOG_STYLE_LIST, !"Gamocda", !"Amoirchiet transportis saxeoba, romelzec gsurt licenziis migeba:\n{FF7319}1.{FFFFFF} Avtomobili\Motocikli\t{42B02C}500$\n{FF7319}2.{FFFFFF} Sahaero transporti\t{42B02C}10000$\n{FF7319}3.{FFFFFF} Wylis transporti\t\t{42B02C}3000$", !"Dadastureba", !"Gauqmeba");
 	}
  	else if(areaid >= BankMenu[0] && areaid <= BankMenu[2])
  	{
 	 	if(PI[playerid][pBizKey])
-		 	ShowPlayerDialogEx(playerid, 791, DIALOG_STYLE_LIST, !"Услуги банка", !"Мои счета\nОткрыть новый счёт\nСнять деньги с кассы бизнеса", !"Принять", !"Отмена");
+		 	ShowPlayerDialogEx(playerid, 791, DIALOG_STYLE_LIST, !"Bankis momsaxurebebi", !"Chemi angarishebi\nAxali angarishis gaxsna\nBiznesidan fulis moxsna", !"Migeba", !"Gauqmeba");
 	 	
 	 	else
-	 		ShowPlayerDialogEx(playerid, 791, DIALOG_STYLE_LIST, !"Услуги банка", !"Мои счета\nОткрыть новый счёт", !"Принять", !"Отмена");
+	 		ShowPlayerDialogEx(playerid, 791, DIALOG_STYLE_LIST, !"Bankis momsaxurebebi", !"Chemi angarishebi\nAxali angarishis gaxsna", !"Migeba", !"Gauqmeba");
 
  	}
  	else if(areaid >= BankProperty[0] && areaid <= BankProperty[2])
  	{
 		if(PI[playerid][pHouseKey] || PI[playerid][pBizKey])
-	 		ShowPlayerDialogEx(playerid, 790, DIALOG_STYLE_LIST, !"Услуги банка", !"Оплата дома\nОплата бизнеса\nОплата АЗС", !"Перейти", !"Отмена");
+	 		ShowPlayerDialogEx(playerid, 790, DIALOG_STYLE_LIST, !"Bankis momsaxurebebi", !"Saxlze gadaxda\nBiznesze gadaxda\nBGS-ze gadaxda", !"Gadasvla", !"Gauqmeba");
 
 		else
-		    SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У вас нет имущества");
+		    SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar gaqvt udzravi qoneba");
  	}
   	else if(areaid >= BankReturn[0] && areaid <= BankReturn[2])
  	{
-		ShowPlayerDialogEx(playerid, 780, DIALOG_STYLE_LIST, !"Услуги банка", !"Вернуть деньги за дом\nВернуть деньги за бизнес\nВернуть деньги за АЗС", !"Перейти", !"Отмена");
+		ShowPlayerDialogEx(playerid, 780, DIALOG_STYLE_LIST, !"Bankis momsaxurebebi", !"Saxlze fulis daburneba\nBiznesze fulis dabruneba\nBGS-ze fulis dabruneba", !"Gadasvla", !"Gauqmeba");
  	}
 	else if(areaid >= gSignal[0] && areaid <= gSignal[3])
 	{
@@ -1603,33 +1603,33 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		new
 			bizid = areaid - gSignal[0];
 
-		ShowPlayerDialogEx(playerid, 210, DIALOG_STYLE_LIST, !"Улучшения автомобиля", !"{FF7319}1.{FFFFFF} Сигнализация\n{FF7319}2.{FFFFFF} Основной цвет\n{FF7319}3.{FFFFFF} Дополнительный цвет", !"Купить", !"Выход"), pTemp[playerid][pCarBiz] = bizid+57;
+		ShowPlayerDialogEx(playerid, 210, DIALOG_STYLE_LIST, !"Avtomobilis ganaxleba", !"{FF7319}1.{FFFFFF} Signalizacia\n{FF7319}2.{FFFFFF} Dziritadi feri\n{FF7319}3.{FFFFFF} Damatebiti feri", !"Yidva", !"Gamosvla"), pTemp[playerid][pCarBiz] = bizid+57;
 	}
 
   	else if(areaid >= PTSConfirm[0] && areaid <= PTSConfirm[2])
  	{
- 	    if(!PI[playerid][pCars]) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У Вас нет личного т/с");
+ 	    if(!PI[playerid][pCars]) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar gyavt sakutari transporti");
 
- 	    if(PI[playerid][pPTS] == 1 || !temp_car_num_get[playerid]) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Для начала установите номерные знаки ({FFFF00}/gps -> Авторынки/Тюнинги -> Пункт выдачи номеров{FFFFFF})");
+ 	    if(PI[playerid][pPTS] == 1 || !temp_car_num_get[playerid]) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Jer daayenet sanomre nishnebi ({FFFF00}/gps -> Avtosalonebi/Tuningebi -> Sanomre nishnebis gacemis punqti{FFFFFF})");
  	    
  	        
-		ShowPlayerDialogEx(playerid, 694, DIALOG_STYLE_MSGBOX, !"Получение ПТС", !"{FFFFFF}Для Вас готово ПТС\n\nВы хотите его забрать?", !"Да", !"Отмена");
+		ShowPlayerDialogEx(playerid, 694, DIALOG_STYLE_MSGBOX, !"Manqanis tex.pasportis ageba", !"{FFFFFF}Tqveni tex.pasporti mzadaa\n\nTqven gnebavt saigot tex.pasporti?", !"Dadastureba", !"Gauqmeba");
  	}
  	else if(areaid >= gPDTicket[0] && areaid <= gPDTicket[2])
  	{
  	    if(!PI[playerid][pFine])
-        	return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У вас нет неоплаченных штрафов");
-        	
-		new
+        	return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar gaqvt jarimebi");
+        	  
+		new 
 		    frmt_ticket_message[128];
 		    
-		format(frmt_ticket_message, sizeof frmt_ticket_message, "\n\n{FFFFFF}Оплатить штраф в размере {FF0000}%d${FFFFFF}?\n\n", PI[playerid][pFine]);
-		ShowPlayerDialogEx(playerid, 695, DIALOG_STYLE_MSGBOX, !"Оплата штрафа", frmt_ticket_message, !"Да", !"Отмена");
+		format(frmt_ticket_message, sizeof frmt_ticket_message, "\n\n{FFFFFF}Gdaixadot jarima odenobit {FF0000}%d${FFFFFF}?\n\n", PI[playerid][pFine]);
+		ShowPlayerDialogEx(playerid, 695, DIALOG_STYLE_MSGBOX, !"Jarimis gadaxda", frmt_ticket_message, !"Dadastureba", !"Gauqmeba");
  	}
  	else if(areaid >= gPDJail[0] && areaid <= gPDJail[2])
  	{
  	    if(!PI[playerid][pWanted])
-        	return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У вас нет розыска");
+        	return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar xart dzebnili");
 
 		new
             time;
@@ -1643,8 +1643,8 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		new
 		    frmt_wanted_message[128];
 
-		format(frmt_wanted_message, sizeof frmt_wanted_message, "{FFFFFF}Вы действительно хотите сдаться с повинной ?\n\nВремя заключения: {FF0000}%d{FFFFFF} минут", time/60);
-		ShowPlayerDialogEx(playerid, 696, DIALOG_STYLE_MSGBOX, !"Сдача с повинной", frmt_wanted_message, !"Да", !"Отмена");
+		format(frmt_wanted_message, sizeof frmt_wanted_message, "{FFFFFF}Tqven nagdad gsurt chabardet policias?\n\nPatimrobis dro: {FF0000}%d{FFFFFF} Wuti", time/60);
+		ShowPlayerDialogEx(playerid, 696, DIALOG_STYLE_MSGBOX, !"Policiaze chabareba", frmt_wanted_message, !"Dadastureba", !"Gauqmeba");
  	}
  	else if(areaid >= gFlyer[0] && areaid <= gFlyer[2])
  	{
@@ -1672,13 +1672,13 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		new flyers = cache_get_row_count(mysql);
 
 		if(flyers == 0)
-		  	return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Нет доступных листовок");
+		  	return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Ar aris xelmisawvdomi broshurebi");
 
 		for(new i; i < flyers; i ++)
 		{
 		    if(flyers_count > 39 && flyers > 40)
 			{
-				format(frmt_flyers_list, sizeof frmt_flyers_list, "%s{FFFFFF}Следующая страница", frmt_flyers_list);
+				format(frmt_flyers_list, sizeof frmt_flyers_list, "%s{FFFFFF}Shemdegi gverdi", frmt_flyers_list);
 			    break;
 			}
 
@@ -1690,7 +1690,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			pTemp[playerid][pFlyersList]++;
 	        flyers_count++;
 		}
-		ShowPlayerDialogEx(playerid, 965, DIALOG_STYLE_LIST, !"Список листовок", frmt_flyers_list, !"Далее", !"Назад");
+		ShowPlayerDialogEx(playerid, 965, DIALOG_STYLE_LIST, !"Broshurebis sia", frmt_flyers_list, !"Shemdeg", !"Ukan");
 		cache_delete(result, mysql);
  	}
  	else if(areaid >= gPhoto[0] && areaid <= gPhoto[2])
@@ -1712,10 +1712,10 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
         GetPlayerWeaponData(playerid, GetWeaponSlot(43), weapon, ammo);
 
 		if(ammo > 0 && weapon == 43)
-			return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У вас уже есть фотоаппарат!");
+			return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ukve gaqvt photoaparati!");
 
 		_GiveGun(playerid, 43, 10);
-		SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Вы взяли фотоаппарат");
+		SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Tqven aiget photoaparati");
 
 	}
 	else if(areaid >= gRadioBoard[0] && areaid <= gRadioBoard[2])
@@ -1730,7 +1730,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		    case 3: if(PI[playerid][pSubfraction] != 2 && PI[playerid][pRank] < 11) return 1;
 		}
 		
-		ShowPlayerDialogEx(playerid, 529, DIALOG_STYLE_INPUT, !"Доска", !"{FFFFFF}Введите текст:\n\n{AFAFAF}Используйте символ \"|\" для переноса текста на другую строку", !"Готово", !"Отмена");
+		ShowPlayerDialogEx(playerid, 529, DIALOG_STYLE_INPUT, !"Dafa", !"{FFFFFF}Sheiyvanet Texti:\n\n{AFAFAF}Gamoiyenet simbolo \"|\" Imisatvis rom texti gadaitanot sxva dafaze", !"Mzadaa", !"Gauqmeba");
 	}
  	for(new i; i < bag_count; i++)
  	{
@@ -1739,13 +1739,13 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			new
 				msg_toall[100];
 
-			format(msg_toall, sizeof msg_toall, "Вы нашли мешок с %d$", bag_value[i]);
+			format(msg_toall, sizeof msg_toall, "Tqven naxet tomara с %d$", bag_value[i]);
 			SendClientMessage(playerid, COLOR_YELLOW, msg_toall);
 
-			format(msg_toall, sizeof msg_toall, "%s(%d) подобрал мешок с %d$", PN(playerid), playerid, bag_value[i]);
+			format(msg_toall, sizeof msg_toall, "%s(%d) Aigo tomara с %d$", PN(playerid), playerid, bag_value[i]);
 			SendClientMessageToAll(COLOR_BLUE, msg_toall);
 			
-			GiveMoney(playerid, bag_value[i], "нашел мешок");
+			GiveMoney(playerid, bag_value[i], "Ipova tomara");
 			DestroyDynamicPickup(bag_pickup[i]);
 			
 			bag_value[i] = 0;
@@ -1766,7 +1766,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 				if(VehicleLoad[i][vlLoading] == true && (GetPVarInt(playerid,"carrygun") || GetPVarInt(playerid,"carryammo")))
 				{
 
-				 	if(VehicleLoad[i][vlLimit] + 1 > 25) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}В т.с. недостаточно места");
+				 	if(VehicleLoad[i][vlLimit] + 1 > 25) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Manqanashi ar aris sakmarisi adgilebi");
 
 					SetPVarInt(playerid, "carrygun", 0);
 					SetPVarInt(playerid, "carryammo", 0);
@@ -1785,7 +1785,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 				}
 				else if(VehicleLoad[i][vlUnloading] == true && !GetPVarInt(playerid,"carrygun") && !GetPVarInt(playerid,"carryammo"))
 				{
-					if(VehicleLoad[i][vlLimit] - 1 < 0) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}В т.с. недостаточно боеприпасов");
+					if(VehicleLoad[i][vlLimit] - 1 < 0) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Manqanashi ar aris sakmarisi sabrdzolo masalebi");
 						
 					VehicleLoad[i][vlLimit] --;
 					SetPVarInt(playerid, "carrygun", 300);
@@ -1817,7 +1817,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 				if(VehicleLoad[i][vlMafLoading] == true && (GetPVarInt(playerid,"carrygun") || GetPVarInt(playerid,"carryammo")))
 				{
 
-					if(VehicleLoad[i][vlLimit] + 1 > 25) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}В т.с. недостаточно места");
+					if(VehicleLoad[i][vlLimit] + 1 > 25) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Transportshi ar aris sakmarisi adgilebi");
 
 					VehicleLoad[i][vlLimit] ++;
 
@@ -1837,7 +1837,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 				}
 				else if(VehicleLoad[i][vlMafUnloading] == true && !GetPVarInt(playerid,"carrygun") && !GetPVarInt(playerid,"carryammo"))
 				{
-					if(VehicleLoad[i][vlLimit] - 1 < 0) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}В т.с. недостаточно боеприпасов");
+					if(VehicleLoad[i][vlLimit] - 1 < 0) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Manqanashi ar aris sakmarisi sabrdzolo masalebi");
 
 					VehicleLoad[i][vlLimit] --;
 					SetPVarInt(playerid, "carrygun", 300);
@@ -1846,7 +1846,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 					new
 						mes[128];
 
-					format(mes, sizeof mes, "Ящиков: {C6E8E8}%d/25", VehicleLoad[i][vlLimit]);
+					format(mes, sizeof mes, "Yutebi: {C6E8E8}%d/25", VehicleLoad[i][vlLimit]);
 					UpdateDynamic3DTextLabelText(VehicleLoad[i][vlText], COLOR_WHITE, mes);
 
 					ApplyAnimation(playerid, !"CARRY", !"liftup", 1.0, 0, 1, 1, 0, 0, 1);
@@ -1855,7 +1855,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 				}
 				else if(VehicleLoad[i][vlRob] == true && !GetPVarInt(playerid,"carrygun") && !GetPVarInt(playerid,"carryammo"))
 				{
-					if(VehicleLoad[i][vlLimit] - 1 < 0) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}В т.с. недостаточно боеприпасов");
+					if(VehicleLoad[i][vlLimit] - 1 < 0) return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Manqanashi ar aris sakmarisi sabrdzolo masalebi");
 					
 					VehicleLoad[i][vlLimit] --;
 					SetPVarInt(playerid, "carrygun", 300);
@@ -1880,10 +1880,10 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 	        return 1;
 	        
 		if(InJob[playerid] != 5)
-			ShowPlayerDialogEx(playerid, 410, DIALOG_STYLE_MSGBOX, !"Строитель дорог", !"{FFFFFF}Вы действительно хотите устроиться на работу строителя дорог?", !"Да", !"Отмена");
+			ShowPlayerDialogEx(playerid, 410, DIALOG_STYLE_MSGBOX, !"Gzebis mshenebeli", !"{FFFFFF}Tqven nagdad gsurt daiwyot mushaoba gzebis msheneblad?", !"Dadastureba", !"Gauqmeba");
 
 		else
-		    ShowPlayerDialogEx(playerid, 411, DIALOG_STYLE_MSGBOX, !"Строитель дорог", !"{FFFFFF}Вы хотите уволиться с работы строителя дорог?", !"Да", !"Отмена");
+		    ShowPlayerDialogEx(playerid, 411, DIALOG_STYLE_MSGBOX, !"Строитель дорог", !"{FFFFFF}Tqven gsurt gzebis msheneblobidan wamosvla?", !"Dadastureba", !"Gauqmeba");
 	}
  	else if(areaid == PorterInvite)
  	{
@@ -1891,10 +1891,10 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 	        return 1;
 	        
 		if(InJob[playerid] != 6)
-			ShowPlayerDialogEx(playerid, 415, DIALOG_STYLE_MSGBOX, !"Грузчик", !"{FFFFFF}Вы действительно хотите устроиться на работу грузчиком?", !"Да", !"Отмена");
+			ShowPlayerDialogEx(playerid, 415, DIALOG_STYLE_MSGBOX, !"Mtvirtavi", !"{FFFFFF}Tqven nagdad gsurt daiwyot mushaoba mtvirtavad?", !"Dadastureba", !"Gauqmeba");
 
 		else
-		    ShowPlayerDialogEx(playerid, 416, DIALOG_STYLE_MSGBOX, !"Грузчик", !"{FFFFFF}Вы хотите уволиться с работы грузчиком?", !"Да", !"Отмена");
+		    ShowPlayerDialogEx(playerid, 416, DIALOG_STYLE_MSGBOX, !"Mtivrtavi", !"{FFFFFF}Tqven gsurt mtvirtavis samsaxuridan wamosvla?", !"Dadastureba", !"Gauqmeba");
 	}
 	else if(areaid == AutoInvite)
  	{
@@ -1922,12 +1922,12 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		}
 
 		if(AutoTime[table])
-			return SendClientMessage(playerid, COLOR_GREY, !"На этом столе нет деталей. Подойдите к другому");
+			return SendClientMessage(playerid, COLOR_GREY, !"Am magidaze ar aris nawilebi. Gadadit shemdeqtan");
 
 		AutoTime[table] = 10;
 
 		temp_auto_amount[playerid] = 2;
-		SendClientMessage(playerid, COLOR_WHITE, !"Вы взяли детали. Теперь идите к столу, чтобы собрать запчасть");
+		SendClientMessage(playerid, COLOR_WHITE, !"Tqven aiget nawili. Axla ki midit magidastan , imisatvir om aawyot avtonawili");
 		new
 		    rand = RandomEx(0, 4),
 			modelid;
@@ -1957,7 +1957,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		}
 
 		if(AutoTableStat[table])
-			return SendClientMessage(playerid, COLOR_GREY, !"Стол занят. Подойдите к другому");
+			return SendClientMessage(playerid, COLOR_GREY, !"Magida dakavebulia. Midit shemdeqtan");
 
 	    if(IsPlayerInAnyVehicle(playerid))
 			return 1;
@@ -2001,10 +2001,10 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			frmt_salary[120];
 
 		if(PI[playerid][pDaysSalary] > 0)
-			format(frmt_salary, sizeof frmt_salary, "Запчасть сдана на склад. {42B02C}+$200{FFFFFF} к зарплате. Заработано: {8D2424}$%d", temp_auto_salary[playerid]);
+			format(frmt_salary, sizeof frmt_salary, "Avtonawili chabarebulia sawyobshi. {42B02C}+$200{FFFFFF} xelfastan. Gamomushavebulia: {8D2424}$%d", temp_auto_salary[playerid]);
 			
 		else
-			format(frmt_salary, sizeof frmt_salary, "Запчасть сдана на склад. {42B02C}+$100{FFFFFF} к зарплате. Заработано: {8D2424}$%d", temp_auto_salary[playerid]);
+			format(frmt_salary, sizeof frmt_salary, "Avtonawili chabarebulia sawyobshi. {42B02C}+$100{FFFFFF} xelfastan. Gamomushavebulia: {8D2424}$%d", temp_auto_salary[playerid]);
 
 		SendClientMessage(playerid, COLOR_WHITE, frmt_salary);
 		PI[playerid][pPointsFactory] += 3;
@@ -2017,7 +2017,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 			{
 		        PI[playerid][pQuestStatus] = 0;
 		        UpdatePlayerData(playerid, "QuestStatus", PI[playerid][pQuestStatus]);
-		    	SendClientMessage(playerid, COLOR_WHITE, !"{DC143C}[QUEST] {FFFFFF}Вы собрали 20 автозапчастей. Отправляйтесь к Саймону");
+		    	SendClientMessage(playerid, COLOR_WHITE, !"{DC143C}[QUEST] {FFFFFF}Tqven aawyvet 20 cali avtonawili. Midit guramastan");
 			}
 		}
 
@@ -2054,11 +2054,11 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 				frmt_gametext[15];
 
 			if(temp_auto_salary[playerid])
-				format(frmt_worked, sizeof frmt_worked, "Вы закончили работу {ABD1BB}сборщика автозапчастей. {FFFFFF}Заработано: {8D2424}$%d", temp_auto_salary[playerid]), SendClientMessage(playerid, COLOR_WHITE, frmt_worked);
+				format(frmt_worked, sizeof frmt_worked, "Tqven daamtavret samushao {ABD1BB}Avtonawilebis amwyobi. {FFFFFF}Gamomushavebulia: {8D2424}$%d", temp_auto_salary[playerid]), SendClientMessage(playerid, COLOR_WHITE, frmt_worked);
 			else
-			    SendClientMessage(playerid, COLOR_WHITE, !"Вы закончили работу {ABD1BB}сборщика автозапчастей.");
+			    SendClientMessage(playerid, COLOR_WHITE, !"Tqven daamtavret samushao {ABD1BB}Avtonawilebis amwyobi.");
 
-			GiveMoney(playerid, temp_auto_salary[playerid], "работа авто");
+			GiveMoney(playerid, temp_auto_salary[playerid], "Avtontransportis mushaoba");
 
 			if(temp_auto_salary[playerid])
 			{
@@ -2176,7 +2176,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 		if(tp == 50)
 		{
 			if(PI[playerid][pLevel] < 2)
-				return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы должны прожить 2 года в штате чтобы попасть в это заведение");
+				return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven unda icxovrot shtatshi 2 weli imisatvir rom moxvdet am shenobashi");
 
 		}
 		if(tp == 88)
@@ -2225,20 +2225,20 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 					new classname[40];
 					switch(HouseInfo[h][hLevel])
 					{
-						case 0: classname = "Эконом";
-						case 1: classname = "Cредний";
-						case 2: classname = "Элитный";
-						case 3: classname = "Особняк";
-						default: classname = "Неизвестно";
+						case 0: classname = "Ekonomi";
+						case 1: classname = "Sahualo";
+						case 2: classname = "Elitaruli";
+						case 3: classname = "Magali klasi";
+						default: classname = "Ucnobi";
 					}
 					
 			        InfoHouse[playerid] = h;
 					format(string,sizeof(string),"\
 					{FFFFFF}House ID: \t{1E90FF}%d\n\
-					{FFFFFF}Цена дома: \t{1E90FF}$%d\n\
-					{FFFFFF}Класс: \t\t{1E90FF}%s\n\n\
-					{FFFFFF}Для покупки нажмите {34C924}Купить",HouseInfo[h][hID],HouseInfo[h][hCost],classname);
-					ShowPlayerDialogEx(playerid, 29, DIALOG_STYLE_MSGBOX, !"Дом продается", string, !"Купить", !"Отмена");
+					{FFFFFF}Saxlis fasi: \t{1E90FF}$%d\n\
+					{FFFFFF}Klasi: \t\t{1E90FF}%s\n\n\
+					{FFFFFF}Yidvisatvis daachiret{34C924}Yidva",HouseInfo[h][hID],HouseInfo[h][hCost],classname);
+					ShowPlayerDialogEx(playerid, 29, DIALOG_STYLE_MSGBOX, !"Saxli iyideba", string, !"Yidva", !"Gauqmeba");
 				}
 				else
 				{
@@ -2250,20 +2250,20 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 					new classname[40];
 					switch(HouseInfo[h][hLevel])
 					{
-						case 0: classname = "Эконом";
-						case 1: classname = "Cредний";
-						case 2: classname = "Элитный";
-						case 3: classname = "Особняк";
-						default: classname = "Неизвестно";
+						case 0: classname = "Ekonomi";
+						case 1: classname = "Sahualo";
+						case 2: classname = "Elitaruli";
+						case 3: classname = "Magali klasi";
+						default: classname = "НUcnobi";
 					}
 								
 					format(string,sizeof(string), "\
 					{FFFFFF}House ID: \t{1E90FF}%d\n\
-					{FFFFFF}Цена дома: \t{1E90FF}%d$\n\
-					{FFFFFF}Владелец: \t{1E90FF}%s\n\
-					{FFFFFF}Класс: \t\t{1E90FF}%s\n\n\
-					{FFFFFF}Для входа в дом нажмите {34C924}Войти",HouseInfo[h][hID],HouseInfo[h][hCost],HouseInfo[h][hOwner],classname);
-				    ShowPlayerDialogEx(playerid, 30, DIALOG_STYLE_MSGBOX, !"Вход", string, !"Войти", !"Отмена");
+					{FFFFFF}Saxlis fasi: \t{1E90FF}%d$\n\
+					{FFFFFF}Mflobeli: \t{1E90FF}%s\n\
+					{FFFFFF}Klasi: \t\t{1E90FF}%s\n\n\
+					{FFFFFF}Saxlshi shesvlisatvis daachiret {34C924}Shesvla",HouseInfo[h][hID],HouseInfo[h][hCost],HouseInfo[h][hOwner],classname);
+				    ShowPlayerDialogEx(playerid, 30, DIALOG_STYLE_MSGBOX, !"Shesvla", string, !"Shesvla", !"Gauqmeba");
 				}
 			}
 		}
@@ -2288,40 +2288,40 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
                 if(GetString(BizInfo[b][bOwner], "The State"))
 				{
 					new format_business_buy[56];
-					format(format_business_buy,sizeof(format_business_buy),"{FFFFFF}Этот бизнес продается за {FF0000}$%d.",BizInfo[b][bCost]);
-					ShowPlayerDialogEx(playerid, 642, DIALOG_STYLE_MSGBOX, !"Бизнес", format_business_buy, !"Войти", !"Купить");
+					format(format_business_buy,sizeof(format_business_buy),"{FFFFFF}Es biznesi iyideba{FF0000}$%d.",BizInfo[b][bCost]);
+					ShowPlayerDialogEx(playerid, 642, DIALOG_STYLE_MSGBOX, !"Biznesi", format_business_buy, !"Shesvla", !"Yidva");
 				}
 				else
 				{
     				if(BizInfo[b][bLock])
 				    {
 					    if(BizInfo[b][bState] == 16 && PI[playerid][pAge] < 18)
-					        return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы не можете зайти в этот бизнес так как Вам меньше 18-ти лет");
+					        return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar shegidzliat am bizneshi shesvla tqven ar xart 18 wlis");
 				    
 					    if(BizInfo[b][bEnterPrice])
 					    {
 							new format_business_enterprice[46];
-							format(format_business_enterprice, sizeof format_business_enterprice, "{FFFFFF}Стоимость входа {FF0000}$%d.", BizInfo[b][bEnterPrice]);
-							ShowPlayerDialogEx(playerid, 760, DIALOG_STYLE_MSGBOX, !"Бизнес", format_business_enterprice, !"Войти", !"Отмена");
+							format(format_business_enterprice, sizeof format_business_enterprice, "{FFFFFF}Shesvlis safasuri {FF0000}$%d.", BizInfo[b][bEnterPrice]);
+							ShowPlayerDialogEx(playerid, 760, DIALOG_STYLE_MSGBOX, !"Biznesi", format_business_enterprice, !"Shesvla", !"Gauqmeba");
 					    }
 						else
 					    {
 							new bint = BizInfo[b][bBint]-1;
 							if(bint < 0 || bint >= MAX_BINTS)
-								return SendClientMessage(playerid,COLOR_GREY,"Ошибка (#99)");
+								return SendClientMessage(playerid,COLOR_GREY,"Shecdoma (#99)");
 
 
 							if(BizInfo[b][bState] == 8)
-								return ShowPlayerDialogEx(playerid, 740, DIALOG_STYLE_MSGBOX, !"Автосалон", !"{FFFFFF}Вы хотите войти в автосалон класса: Эконом?", !"Да", !"Нет");
+								return ShowPlayerDialogEx(playerid, 740, DIALOG_STYLE_MSGBOX, !"Avtosaloni", !"{FFFFFF}Tqven gsurt shexvidet avtosalonshi klasi: Ekonomi?", !"Dadastureba", !"Gauqmeba");
 
 							if(BizInfo[b][bState] == 9)
-								return ShowPlayerDialogEx(playerid, 741, DIALOG_STYLE_MSGBOX, !"Автосалон", !"{FFFFFF}Вы хотите войти в автосалон класса: Средний?", !"Да", !"Нет");
+								return ShowPlayerDialogEx(playerid, 741, DIALOG_STYLE_MSGBOX, !"Avtosaloni", !"{FFFFFF}Tqven gsurt shexvidet avtosalonshi klasi: Sashualeba?", !"Dadastureba", !"Gauqmeba");
 
 							if(BizInfo[b][bState] == 10)
-								return ShowPlayerDialogEx(playerid, 742, DIALOG_STYLE_MSGBOX, !"Автосалон", !"{FFFFFF}Вы хотите войти в автосалон класса: Элитный?", !"Да", !"Нет");
+								return ShowPlayerDialogEx(playerid, 742, DIALOG_STYLE_MSGBOX, !"Avtosaloni", !"{FFFFFF}Tqven gsurt shexvidet avtosalonshi klasi: Elitaruli?", !"Dadastureba", !"Gauqmeba");
 
 							if(BizInfo[b][bState] == 11)
-								return ShowPlayerDialogEx(playerid, 743, DIALOG_STYLE_MSGBOX, !"Мотосалон", !"{FFFFFF}Вы хотите войти в мотосалон?", !"Да", !"Нет");
+								return ShowPlayerDialogEx(playerid, 743, DIALOG_STYLE_MSGBOX, !"Motosaloni", !"{FFFFFF}Tqven gsurt shexvidet motosalonshi?", !"Dadastureba", !"Gauqmeba");
 
 	                        justtp_exit[playerid] = true;
 
@@ -2335,7 +2335,7 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 							BizInfo[b][bVisit] ++;
 
 							if(BizInfo[b][bImprove][0])
-								SendClientMessage(playerid,COLOR_GREY,"В этом бизнесе имеется аптечка. Чтобы восстановить здоровье используйте {FFFFFF}/healup ({00CC00}$150{FFFFFF})");
+								SendClientMessage(playerid,COLOR_GREY,"Am bizneshi aris pirveladi daxmarebis yuti. Imisatvir rom agidginot sicocxle gamoiyenet {FFFFFF}/healup ({00CC00}$150{FFFFFF})");
 						}
 					}
 				}
@@ -2388,13 +2388,13 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 	   				for(new i; i < SHOP_OBJECTS; i++)
 			   			format(format_shop_buy, sizeof format_shop_buy, "{ffffff}%s%s {7AC71F}($%d)\n", format_shop_buy, ShopObject[i], ShopPrice[i]);
 
-					ShowPlayerDialogEx(playerid, 774, DIALOG_STYLE_LIST, !"Магазин 24/7", format_shop_buy, !"Купить", !"Выход");
+					ShowPlayerDialogEx(playerid, 774, DIALOG_STYLE_LIST, !"Magazia 24/7", format_shop_buy, !"Yidva", !"Gamosvla");
 				}
-				case 2: ShowPlayerDialogEx(playerid, 716, DIALOG_STYLE_LIST, !"Клуб", !"Пиво [$215]\nВино [$330]\nШампанское [$335]\nВиски [$290]\nШаверма [$490]", !"Купить", !"Выход");
-				case 3: ShowPlayerDialogEx(playerid, 717, DIALOG_STYLE_LIST, !"Ресторан", !"Запеченный лосось [$580]\nСтейк средний прожарки [$650]\nСалат с судаком [$540]\nВино [$330]\nМалиновый чизкейк [$335]", !"Купить", !"Выход");
-				case 4: ShowPlayerDialogEx(playerid, 718, DIALOG_STYLE_LIST, !"Burger Shot", !"Бургер с курицей [$380]\nБургер с говядиной[$410]\nЧизбургер [$425]\nКартошка Фри [$110]\nГазированный напиток(Pepsi/Cola/Fanta) [$230]", !"Купить", !"Выход");
-				case 5: ShowPlayerDialogEx(playerid, 719, DIALOG_STYLE_LIST, !"Pizza Hut", !"Пицца Маргарита [$356]\nПицца 4 сыра [$390]\nКальцоне с ветчиной [$335]\nГазированный напиток(Pepsi/Cola/Fanta) [$230]", !"Купить", !"Выход");
-				case 6: ShowPlayerDialogEx(playerid, 720, DIALOG_STYLE_LIST, !"Cluckin Bell", !"Бургер с курицей [$380]\nКуриные крылышки [$325]\nХотдог с куриной сосиской [$295]\nПирожок с яблоком [$270]\nЧай/Кофе [$220]", !"Купить", !"Выход");
+				case 2: ShowPlayerDialogEx(playerid, 716, DIALOG_STYLE_LIST, !"Klubi", !"Ludi [$215]\nIvanichis Gvino [$330]\nShampanuri [$335]\nViski [$290]\nShaurma [$490]", !"Yidva", !"Gamosvla");
+				case 3: ShowPlayerDialogEx(playerid, 717, DIALOG_STYLE_LIST, !"Restorani", !"Kurdglis xorci [$580]\nSahualod shemwvari steiki [$650]\nCezari [$540]\nIvanichis Gvino [$330]\nChizqeiqi [$335]", !"Yidva", !"Gamosvla");
+				case 4: ShowPlayerDialogEx(playerid, 718, DIALOG_STYLE_LIST, !"Burger Shot", !"Burgeri qatmit [$380]\nBurgeri xorcit[$410]\nChizburgeri [$425]\nKartofili fri [$110]\nGaziani sasmeli(Pepsi/Cola/Fanta) [$230]", !"Yidva", !"Gamosvla");
+				case 5: ShowPlayerDialogEx(playerid, 719, DIALOG_STYLE_LIST, !"Pizza Hut", !"Pizza margarita [$356]\nPizza [$390]\nVichina [$335]\nGaziani sasmeli(Pepsi/Cola/Fanta) [$230]", !"Yidva", !"Gamosvla");
+				case 6: ShowPlayerDialogEx(playerid, 720, DIALOG_STYLE_LIST, !"Cluckin Bell", !"Burgeri qatmit[$380]\nQatmis frtebi [$325]\nHot-Dogi cxare sosisit [$295]\nNamcxvari vashlit [$270]\nChai/Yava [$220]", !"Yidva", !"Gamosvla");
 				case 7:
 				{
 					if(justtp_exit[playerid] == true)
@@ -2429,22 +2429,22 @@ public OnPlayerEnterDynamicArea(playerid, areaid)
 						}
 					}
 				}
-				case 12: ShowPlayerDialogEx(playerid, 721, DIALOG_STYLE_LIST, !"Оружейный магазин", !"Кастет 50$\nБейсбольная бита 100$\nДробовик 70$ за 1 патрон\nDesert Eagle 60$ за 1 патрон\nПолуавтомат MP5 30$ за 1 патрон\nАвтомат AK47 60$ за 1 патрон\nВинтовка 70$ за 1 патрон\nАвтомат M4 60$ за 1 патрон", !"Далее", !"Отмена");
+				case 12: ShowPlayerDialogEx(playerid, 721, DIALOG_STYLE_LIST, !"Iaragis magazia", !"Kasteti 50$\nBita 100$\nShotGun 70$-ad 1 tyvia\nDesert Eagle 60$-ad 1 tyvia\nNaxevrad avtomati MP5 30$-ad 1 tyvia\nAvtomati AK47 60$-ad 1 tyvia\nSnaiperi 70$-ad 1 tyvia\nAvtomati M4 60$-ad 1 tyvia", !"Shemdeg", !"Gauqmeba");
 				case 13:
 				{
-					ShowPlayerDialogEx(playerid, 293, DIALOG_STYLE_LIST, !"Магазин аксессуаров", !"1. Шапки\n2. Наушники\n3. Панамы\n4. Кепки\n5. Очки\n6. Банданы\n7. Шляпы\n8. Часы", !"Выбрать", !"Отмена");
+					ShowPlayerDialogEx(playerid, 293, DIALOG_STYLE_LIST, !"Aqsesuarebis magazia", !"1. Qudebi\n2. Yursasmenebi\n3. Panamkebi\n4.Kepkebi\n5. Saatvaleebi\n6. Bandanebi\n7. Cilindruli qudebi\n8. Saatebi", !"Archeva", !"Gauqmeba");
 				}
-				case 14: ShowPlayerDialogEx(playerid, 377, DIALOG_STYLE_LIST, !"Агентство недвижимости", !"Выберите тип недвижимости:\n{FF7319}1.{FFFFFF} Дома\n{FF7319}2.{FFFFFF} Бизнесы\n{FF7319}3.{FFFFFF} АЗС", !"Выбор", !"Выход");
+				case 14: ShowPlayerDialogEx(playerid, 377, DIALOG_STYLE_LIST, !"Qonebis saagento", !"Amoirchiet qonebis tipi:\n{FF7319}1.{FFFFFF} Saxli\n{FF7319}2.{FFFFFF} Biznesebi\n{FF7319}3.{FFFFFF} BGS", !"Dadastureba", !"Gauqmeba");
 				case 15:
 				{
 				    if(0 == gPaintBall[pbStatus])
-				        return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}В данный момент нет доступных игр");
+				        return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Am momentshi ar aris xelmisawvdomi tamashebi");
 				        
 					new
 					    frmt_center_message[128],
 						status[10];
 					    
-					strcat(frmt_center_message, "№. Название\tКол-во участников\tДо начала\n");
+					strcat(frmt_center_message, "№. Dasaxeleba\tMotamasheebis raodenoba\tSawyisisatvis\n");
 
 
 					if(gPaintBall[pbStatus] == 1)
@@ -2499,12 +2499,12 @@ public OnPlayerLeaveDynamicArea(playerid, areaid)
 			frmt_gametext[15];
 
 		if(temp_job_amount[playerid])
-			format(frmt_worked, sizeof frmt_worked, "Вы закончили работу {ABD1BB}строителя дорог. {FFFFFF}Заработано: {8D2424}$%d", temp_job_amount[playerid]), SendClientMessage(playerid, COLOR_WHITE, frmt_worked);
+			format(frmt_worked, sizeof frmt_worked, "Tqven daamtavret samushao {ABD1BB}Gzebis mshenebeli. {FFFFFF}Gamomushavebulia: {8D2424}$%d", temp_job_amount[playerid]), SendClientMessage(playerid, COLOR_WHITE, frmt_worked);
 
 		else
-		    SendClientMessage(playerid, COLOR_WHITE, !"Вы закончили работу {ABD1BB}строителя дорог.");
+		    SendClientMessage(playerid, COLOR_WHITE, !"Tqven daamtavret samushao {ABD1BB}Gzebis mshenebeli.");
 
-		GiveMoney(playerid, temp_job_amount[playerid], "работа строителем");
+		GiveMoney(playerid, temp_job_amount[playerid], "Msheneblad mushaoba");
 
         if(temp_job_amount[playerid])
         {
@@ -2543,13 +2543,13 @@ public OnPlayerLeaveDynamicArea(playerid, areaid)
 			frmt_gametext[15];
 
 		if(temp_porter_amount[playerid])
-			format(frmt_worked, sizeof frmt_worked, "Вы закончили работу {ABD1BB}грузчиком. {FFFFFF}Заработано: {8D2424}$%d", temp_porter_amount[playerid]), SendClientMessage(playerid, COLOR_WHITE, frmt_worked);
+			format(frmt_worked, sizeof frmt_worked, "Tqven daamtavret samushao {ABD1BB}Mtvirtavi. {FFFFFF}Gamomushavebulia: {8D2424}$%d", temp_porter_amount[playerid]), SendClientMessage(playerid, COLOR_WHITE, frmt_worked);
 
 		else
-			SendClientMessage(playerid, COLOR_WHITE, !"Вы закончили работу {ABD1BB}грузчиком.");
+			SendClientMessage(playerid, COLOR_WHITE, !"Tqven daamtavret samushao {ABD1BB}Mtvirtavi.");
 
 
-		GiveMoney(playerid, temp_porter_amount[playerid], "работа грузчиком");
+		GiveMoney(playerid, temp_porter_amount[playerid], "Mtvirtavad mushaoba");
 
         if(temp_porter_amount[playerid])
         {
@@ -2830,7 +2830,7 @@ public OnPlayerSpawn(playerid)
 		for(new td; td < 8; td++)
 			TextDrawHideForPlayer(playerid, tdPaintBall[td]);
 
-	    SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Вы потерпели поражение в мероприятии PaintBall");
+	    SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Tqven damarcxdit tamashshi - PaintBall");
 	    
 		PI[playerid][pDead] = false;
 		SetPlayerPos(playerid, 827.5557,7.4137,1004.1870);
@@ -2940,7 +2940,7 @@ stock SettingSpawn(playerid)
 	    }
 	    
 		J_SetPlayerHealth(playerid, 100);
-    	SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Чтобы посмотреть сколько Вам осталось сидеть в тюрьме, введите команду {FFFF00}/ptime");
+    	SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Imisatvir rom sheamowmot ramdeni dagrchat cixeshi , sheiyvanet {FFFF00}/ptime");
 		if(PI[playerid][pJailKey] && !PI[playerid][pJailAdmin])
 		{
 			PI[playerid][pJailTime] = 0;
@@ -2949,7 +2949,7 @@ stock SettingSpawn(playerid)
             PI[playerid][pJailAdmin] = 0;
             UpdatePlayerData(playerid, "JailAdmin", PI[playerid][pJailAdmin]);
             
-			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}У вас были ключи от камеры. Вы были освобождены");
+			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Tqven gqondat saknis gasagebi. Tqven Tavisufali xart");
 
 			new
 				prison = PI[playerid][pPrison]-1;
@@ -3011,21 +3011,21 @@ stock SettingSpawn(playerid)
 
 	else//спавн дома
 	{
-		if(PI[playerid][pSpawn] == 2 && PI[playerid][pHouseKey] && GetPVarInt(playerid,"SpecOn") != 1)//проверка выбора спавна и наличия ключей
+		if(PI[playerid][pSpawn] == 2 && PI[playerid][pHouseKey] && GetPVarInt(playerid,"SpecOn") != 1)//Spaunis archevis shemowmeba da gasagebebis raodenoba
 		{
-			if(GetString(HouseInfo[PI[playerid][pHouseKey]-1][hOwner], PN(playerid)))//проверка соответствия имени и
+			if(GetString(HouseInfo[PI[playerid][pHouseKey]-1][hOwner], PN(playerid)))//Saxelebis damtxvevis albatoba da
 			{
 			    new hid = PI[playerid][pHouseKey]-1;
-			    HouseEntered[playerid] = hid+1;//отмечает в каком доме находиться чувак и отправляет его туда
+			    HouseEntered[playerid] = hid+1;//Nishnavs romel saxlshia bichi  da agzavnis mas iq
 				SetSpawnInfoEx(playerid, skin, HouseInfo[hid][hExit_X],HouseInfo[hid][hExit_Y],HouseInfo[hid][hExit_Z],0.0);
 				SetPlayerInterior(playerid,HouseInfo[hid][hInt]);
 				SetPlayerVirtualWorld(playerid, hid+1+50);
 			}
 			else
 			{
-				for(new i;i < 3;i ++)// перебираеться количество комнат
+				for(new i;i < 3;i ++)// Ircheva otaxebis raodenoba
 				{
-					if(GetString(HRoomOwner[PI[playerid][pHouseKey]-1][i], PN(playerid)))//возвращает комнаты
+					if(GetString(HRoomOwner[PI[playerid][pHouseKey]-1][i], PN(playerid)))//Abrunebs otaxebs
 					{
 					    new hid = PI[playerid][pHouseKey]-1;
 					    HouseEntered[playerid] = hid+1;
@@ -3366,10 +3366,10 @@ public OnPlayerDeath(playerid, killerid, reason)
 			new
 			    fmrt_wanted_message[180];
 
-			format(fmrt_wanted_message, sizeof fmrt_wanted_message, "Вы объявлены в розыск (+2). Причина: убийство. ((%d))", playerid);
+			format(fmrt_wanted_message, sizeof fmrt_wanted_message, "Tqven gaxdit dzebnili (+2). Mizezi: Mkvleloba. ((%d))", playerid);
 	        SendClientMessage(killerid, 0xFF9900AA, fmrt_wanted_message);
 
-			format(fmrt_wanted_message, sizeof fmrt_wanted_message, "[Внимание] %s объявлен в розыск (+2). Причина: Убийство.", PN(killerid));
+			format(fmrt_wanted_message, sizeof fmrt_wanted_message, "[Yuradgeba] %s Gaxda dzebnili (+2). Mizezi: Mkvleloba.", PN(killerid));
 			CopMes(0x007FFFFF, fmrt_wanted_message);
 		}
 		
@@ -3385,10 +3385,10 @@ public OnPlayerDeath(playerid, killerid, reason)
 				rank = PI[killerid][pRank],
 				fmrt_wanted_message[128];
 				
-			format(fmrt_wanted_message, sizeof fmrt_wanted_message, "Подозреваемый {FFFFFF}%s {269BD8}отправлен в КПЗ", PN(playerid));
+			format(fmrt_wanted_message, sizeof fmrt_wanted_message, "Echvimtaneli {FFFFFF}%s {269BD8}Gagzavnilia KPZ-ze", PN(playerid));
 			SendClientMessage(killerid, 0x269BD8FF, fmrt_wanted_message);
 			
-			format(fmrt_wanted_message, sizeof fmrt_wanted_message, "[Внимание] %s %s поймал преступника '%s'", gFractionRankName[fractionid][rank-1], PN(killerid), PN(playerid));
+			format(fmrt_wanted_message, sizeof fmrt_wanted_message, "[Yuradgeba] %s %s Daichira damnashave '%s'", gFractionRankName[fractionid][rank-1], PN(killerid), PN(playerid));
 	  		CopMes(0x007FFFFF, fmrt_wanted_message);
 
 			PI[playerid][pJailTime] = PI[playerid][pWanted] * 300;
@@ -3517,7 +3517,7 @@ public OnVehicleSpawn(vehicleid)
 			pTemp[i][pTaxiGoing] = false;
 			pTemp[i][pTaxiStart] = 0.0;
 			pTemp[i][pTaxiTotal] = 0;
-			SendClientMessage(i, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Рабочее т/с было отбуксировано.");
+			SendClientMessage(i, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Transporti gadaiyvana evakuatorma.");
 			break;
 		}
 	}
@@ -3654,7 +3654,7 @@ public OnVehicleDeath(vehicleid, killerid)
 	    new player = VehicleInfo[vehicleid][vTruckOwner];
 		if(player != INVALID_PLAYER_ID)
 		{
-			SendClientMessage(player,COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Трак уничтожен. Вам было возвращено 20% от стоимости груза.");
+			SendClientMessage(player,COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Satvirto avtomobili ganadgurebulia. Tqven dagibrundat 20% tvirtis safasuridan.");
 			new back = pTemp[player][pTruckWeight]/100*80*2;
 			GiveMoney(player,back,"Возврат за уничтоженый трак");
 			if(pTemp[player][pTruckWagonID] != INVALID_VEHICLE_ID)
@@ -3726,7 +3726,7 @@ public OnVehicleDeath(vehicleid, killerid)
 		ArendInfo[get_rent][aPlayerID] = INVALID_PLAYER_ID;
 		if(IsPlayerConnected(playerid) && pTemp[playerid][pArendKey] == get_rent)
 		{
-			SendClientMessage(playerid, COLOR_GREY, !"Транспорт, который вы арендовали, был уничтожен. Аренда закончилась");
+			SendClientMessage(playerid, COLOR_GREY, !"Transporti romelis iqiravet, ganadgurebulia. Qiraobis dro dasrulda");
 			pTemp[playerid][pArendKey] = INVALID_VEHICLE_ID;
 		}
 	}
@@ -3752,10 +3752,10 @@ public OnPlayerText(playerid, text[])
 	{
 		if(PI[playerid][pAdmin] > 0 && !ADuty[playerid])
 		{
-			ShowPlayerDialogEx(playerid, 211, 1, !"{74FFA0}Авторизация", !"{FFFFFF}Введите админ-пароль:", !"ОК", !"Отмена");
+			ShowPlayerDialogEx(playerid, 211, 1, !"{74FFA0}Avtorizacia", !"{FFFFFF}Sheiyvanet admin-paroli:", !"Dadastureba", !"Gauqmeba");
 			return 0;
 		}
-	   	if(pTemp[playerid][pFlood] > gettime()) return !SCM(playerid,COLOR_WHITE, !"{FF2222}[Ошибка] {ffffff}Не флудите");
+	   	if(pTemp[playerid][pFlood] > gettime()) return !SCM(playerid,COLOR_WHITE, !"{FF2222}[Shecdoma] {ffffff}Nu fludavt");
 
 	    if(PI[playerid][pMuteTime] > 0)
 		{
@@ -3768,7 +3768,7 @@ public OnPlayerText(playerid, text[])
 		pTemp[playerid][pFlood] = 1;
 
 		if(strlen(text) > 100)
-		    return !SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Слишком длинный текст");
+		    return !SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Texsti dzalian grdzelia");
 
 		for(new i; i < sizeof gNewsDialee; i++)
 		{
@@ -3778,7 +3778,7 @@ public OnPlayerText(playerid, text[])
 					frmt_dial_message[128],
 					subid = PI[gNewsDialer[i]][pSubfraction];
 					
-				format(frmt_dial_message, sizeof frmt_dial_message, "[Radio] %s [тел.]: %s", PN(playerid), text);
+				format(frmt_dial_message, sizeof frmt_dial_message, "[Radio] %s [tel.]: %s", PN(playerid), text);
 				for(new r = 0, j = GetPlayerPoolSize(); r <= j; r++)
 				{
 					if(PI[r][pRadio] == subid || r == playerid)
@@ -3799,7 +3799,7 @@ public OnPlayerText(playerid, text[])
 				id = gCalls[playerid][gCaller];
 
 			else
-				return SendClientMessage(playerid, COLOR_GREY, !"Ошибка (#112)");
+				return SendClientMessage(playerid, COLOR_GREY, !"Shecdoma (#112)");
 			
 			new mes[19 + 128 + MAX_PLAYER_NAME];
 			new mesid[19 + 128 + MAX_PLAYER_NAME + 4];
@@ -3976,7 +3976,7 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 	if(GetVehicleModel(vehicleid)==538 ) ExitCar(playerid);
     if(temp_cuffer_sender[playerid] != INVALID_PLAYER_ID)
     {
-		SendClientMessage(playerid, COLOR_GREY, !"Вы не можете сесть в т/с в наручниках");
+		SendClientMessage(playerid, COLOR_GREY, !"Tqven ar shegidzliat chajdet manqanashi borkilebit");
 		RemovePlayerFromVehicle(playerid);
 		ClearAnimations(playerid);
 		return 1;
@@ -3995,7 +3995,7 @@ public OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 	}
 	if(InJob[playerid] == 5 || InJob[playerid] == 6 || InJob[playerid] == 7)
 	{
-		SendClientMessage(playerid, COLOR_GREY, "Вы не можете сесть в Т/С, работая");
+		SendClientMessage(playerid, COLOR_GREY, "Mushaobis dros tqven ar shegidzliat chajdet manqanashi");
 		RemovePlayerFromVehicle(playerid);
 		HideCarInfo(playerid);
 		ClearAnimations(playerid);
@@ -4024,8 +4024,8 @@ public OnPlayerExitVehicle(playerid, vehicleid)
 		new scdplayerid = temp_fill_sender[playerid];
 		DeletePVar(playerid, "MechanicPrice");
 		DeletePVar(playerid, "MechanicFuel");
-		SendClientMessage(scdplayerid,COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Игрок отказался от заправки т/с");
-		SendClientMessage(playerid,COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Вы отказались от заправки т/с");
+		SendClientMessage(scdplayerid,COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Motamashem uari tqva manqanashi benzinis chasxmaze");
+		SendClientMessage(playerid,COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Tqven tqvit uari benzinis chasxmaze");
 		temp_fill_sender[playerid] = INVALID_PLAYER_ID;
 	}
 	if(temp_repair_sender[playerid] != INVALID_PLAYER_ID)
@@ -4033,8 +4033,8 @@ public OnPlayerExitVehicle(playerid, vehicleid)
 		new scdplayerid = temp_fill_sender[playerid];
 		DeletePVar(playerid, "MechanicPrice");
 		DeletePVar(playerid, "MechanicRepair");
-		SendClientMessage(scdplayerid,COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Игрок отказался от починки т/с");
-		SendClientMessage(playerid,COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Вы отказались от починки т/с");
+		SendClientMessage(scdplayerid,COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Motamashem tqva oari manqanis gaketebaze");
+		SendClientMessage(playerid,COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Tqven tqvit uari manqanis gaketebaze");
 		temp_repair_sender[playerid] = INVALID_PLAYER_ID;
 	}
 	if(PI[playerid][pCarInfoTimer] != 0)
@@ -4097,7 +4097,7 @@ stock CheckEnterCar(playerid, vehicleid)
 
 			if(PI[playerid][pJob] != VehicleInfo[vehicleid][vJob])
 			{
-			    SCM(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У вас нет ключей от этого транспорта!");
+			    SCM(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar gaqvt am manqanis gasagebi!");
 				ExitCar(playerid);
 			}
 		}
@@ -4108,7 +4108,7 @@ stock CheckEnterCar(playerid, vehicleid)
 				if(VehicleInfo[vehicleid][vTeam] == 10 && VehicleInfo[vehicleid][vSubTeam] == 0 && GetVehicleModel(vehicleid) == 426 && PI[playerid][pRank] == 11)
 				    return 1;
 
-				SCM(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Данный транспорт принадлежит организации, в которой Вы не состоите");
+				SCM(playerid, COLOR_WHITE, !"{FF2222}[Shecdomax] {FFFFFF}Es transporti ganekutvneba organizacias , romelshic tqven ar shedgebit");
 				ExitCar(playerid);
 
 			}
@@ -4119,7 +4119,7 @@ stock CheckEnterCar(playerid, vehicleid)
 					new
 					    veh_info[100];
 					    
-					format(veh_info, sizeof veh_info, "{FF2222}[Ошибка] {FFFFFF}Данный транспорт доступен с %d ранга", VehicleInfo[vehicleid][vRank]);
+					format(veh_info, sizeof veh_info, "{FF2222}[Shecdoma] {FFFFFF}Es transporti xelmisawvdomia %d-e rangidan", VehicleInfo[vehicleid][vRank]);
 			        SCM(playerid, COLOR_WHITE, veh_info);
 					ExitCar(playerid);
 			    }
@@ -4130,7 +4130,7 @@ stock CheckEnterCar(playerid, vehicleid)
 		{
 			if(PI[playerid][pFlyLic] < YES_LICENSE)
 			{
-			    SCM(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У вас нет лицензии на полеты");
+			    SCM(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar gaqvt licenzia frenaze");
 				ExitCar(playerid);
 				return true;
 			}
@@ -4139,7 +4139,7 @@ stock CheckEnterCar(playerid, vehicleid)
 		{
 			if(PI[playerid][pBoatLic] < YES_LICENSE)
 			{
-				SCM(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У вас нет лицензии на вождение водного транспорта");
+				SCM(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar gaqvt licenzia wylis transportze");
 				ExitCar(playerid);
 				return true;
 			}
@@ -4148,7 +4148,7 @@ stock CheckEnterCar(playerid, vehicleid)
 		{
 			if(PI[playerid][pCarLic] < YES_LICENSE)
 			{
-			    SCM(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У вас нет лицензии на вождение");
+			    SCM(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar gaqvt martvis mowmoba");
 				ExitCar(playerid);
 				return true;
 			}
@@ -4209,7 +4209,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			if(GetPVarInt(playerid, "AC_VEHID") != vehid)
 			{
 				new lstring[128];
-				format(lstring, sizeof(lstring), "[AC] » Игрок %s[%d] возможно использует Crasher.", PN(playerid), playerid);
+				format(lstring, sizeof(lstring), "[AC] » Motamashe %s[%d] Albat iyenebs Crasher.", PN(playerid), playerid);
 				SendAdminsMessage(0xFF00FFFF, lstring);
 				return true;
 			}
@@ -4253,7 +4253,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 	 	    if(PI[playerid][pFine] > 15000)
 			{
 			    RemovePlayerFromVehicle(playerid);
-				SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У вас слишком много неоплаченных штрафов");
+				SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven gaqvt dzalian bevri jarima");
 				return 1;
 			}
 			
@@ -4263,8 +4263,8 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 
 		        if(GetEngineStatus(carid) <= 0)
 		        {
-					SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Чтобы завести двигатель введите {AAE63E}/engine{FFFFFF} или нажмите {AAE63E}CTRL");
-					//SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Чтобы включить фары введите {AAE63E}/lights{FFFFFF} или нажмите {AAE63E}ALT");
+					SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Manqanis dasaqoqad gamoiyenet {AAE63E}/engine{FFFFFF} an daaweqit {AAE63E}CTRL");
+					//SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Farebis chasartavad gamoiyenet {AAE63E}/lights{FFFFFF} an daaweqit {AAE63E}ALT");
 	   			}
 			}
 			else
@@ -4275,7 +4275,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 		else
 		    if(GetEngineStatus(carid) <= 0 && GetArendCarID(vehid, arend_id) == (-1)) SetEngineStatus(carid);
 		    
-		//if(newstate == 2 && GetVehicleModel(GetPlayerVehicleID(playerid)) == 433 || GetVehicleModel(GetPlayerVehicleID(playerid)) ==548) SCM(playerid,COLOR_WHITE,"[Подсказка] {FFFFFF}Для того чтобы начать развозку оборудования введи [/carm]");
+		//if(newstate == 2 && GetVehicleModel(GetPlayerVehicleID(playerid)) == 433 || GetVehicleModel(GetPlayerVehicleID(playerid)) ==548) SCM(playerid,COLOR_WHITE,"[Minishneba] {FFFFFF}Imisatvis rom daiwyot inventaris gadatana sheiyvanet  [/carm]");
 
 		if(VehicleInfo[carid][vTeam] == 7 && VehicleInfo[carid][vSubTeam] == 2 && GetVehicleModel(carid) == 548 && (VehicleLoad[carid][vlLoading] || VehicleLoad[carid][vlUnloading]))
 		{
@@ -4292,7 +4292,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			VehicleLoad[carid][vlPickup] = -1;
 			VehicleLoad[carid][vlArea] = -1;
 			VehicleLoad[carid][vlText] = NONE_3D_TEXT;
-			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Загрузка/разгрузка завершена");
+			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Datvirtva/Gadmotvirtva dasrulebulia");
 		}
 		if(VehicleInfo[carid][vTeam] == 7 && VehicleInfo[carid][vSubTeam] == 1 && GetVehicleModel(carid) == 548 && (VehicleLoad[carid][vlLoading] || VehicleLoad[carid][vlUnloading]))
 		{
@@ -4309,7 +4309,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			VehicleLoad[carid][vlPickup] = -1;
 			VehicleLoad[carid][vlArea] = -1;
 			VehicleLoad[carid][vlText] = NONE_3D_TEXT;
-			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Загрузка/разгрузка завершена");
+			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Datvirtva/Gadmotvirtva dasrulda");
 
 
 		}
@@ -4328,7 +4328,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			VehicleLoad[carid][vlPickup] = -1;
 			VehicleLoad[carid][vlArea] = -1;
 			VehicleLoad[carid][vlText] = NONE_3D_TEXT;
-			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Загрузка/разгрузка завершена. Отправляйтесь на отмеченное место");
+			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Datvirtva/Gadmotvirtva dasrulebulia. Gaemgzavret monishnul adgilas");
        		foreach(new i : Player)
 		    {
 		        if(!IsPlayerConnected(i) || !IsPlayerLogged[i])
@@ -4384,7 +4384,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			VehicleLoad[carid][vlPickup] = -1;
 			VehicleLoad[carid][vlArea] = -1;
 			VehicleLoad[carid][vlText] = NONE_3D_TEXT;
-			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Загрузка/разгрузка завершена");
+			SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Datvirtva/gadmotvirtva dasrulda");
        		foreach(new i : Player)
 		    {
 		        if(!IsPlayerConnected(i) || !IsPlayerLogged[i])
@@ -4414,7 +4414,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 				VehicleLoad[carid][vlPickup] = -1;
 				VehicleLoad[carid][vlArea] = -1;
 				VehicleLoad[carid][vlText] = NONE_3D_TEXT;
-				SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Загрузка/разгрузка завершена");
+				SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Datvirtva/Gadmotvirtva dasrulda");
 			}
 			else if(VehicleInfo[carid][vTeam] == 7 && VehicleInfo[carid][vSubTeam] == 1 && GetVehicleModel(carid) == 433 && VehicleLoad[carid][vlRob])
 			{
@@ -4434,7 +4434,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 				VehicleLoad[carid][vlText] = NONE_3D_TEXT;
 				RemovePlayerFromVehicle(playerid);
 				HideCarInfo(playerid);
-				SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Подсказка] {FFFFFF}Разгрузка боеприпасов завершена");
+				SendClientMessage(playerid, COLOR_WHITE, !"{FFC800}[Minishneba] {FFFFFF}Sabrdzolo masalebis gadmotvirtva dasrulebulia");
 			}
 		}
 
@@ -4451,12 +4451,12 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 					rc = GetArendCarID(vehid),
 					frmt_arend_message[210];
 	
-			    format(frmt_arend_message, sizeof frmt_arend_message, "{FFFFFF}Транспорт для аренды\n\n- Модель: {86B9FF}%s{FFFFFF}\n- Стоимость: {86B9FF}%d${FFFFFF}\n\nЧтобы арендовать нажмите {86B9FF}\"Аренда\"{FFFFFF}", VehicleName[GetVehicleModel(vehid)-400], ArendInfo[rc][aCost]);
-				ShowPlayerDialogEx(playerid, 112, DIALOG_STYLE_MSGBOX, !"Аренда", frmt_arend_message, !"Аренда", !"Отмена");
+			    format(frmt_arend_message, sizeof frmt_arend_message, "{FFFFFF}Manqana qiraobisatvis\n\n- Modeli: {86B9FF}%s{FFFFFF}\n- Girebuleba: {86B9FF}%d${FFFFFF}\n\nSaqiraveblad daachiret {86B9FF}\"Qiraoba\"{FFFFFF}", VehicleName[GetVehicleModel(vehid)-400], ArendInfo[rc][aCost]);
+				ShowPlayerDialogEx(playerid, 112, DIALOG_STYLE_MSGBOX, !"Qiraoba", frmt_arend_message, !"Qiraoba", !"Gauqmeba");
 			}
 			else if(arend_id != playerid)
 			{
-			    SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Этот транспорт уже арендуют");
+			    SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Am manqanas ukve qiraoben");
 			    RemovePlayerFromVehicle(playerid);
 			}
 		}
@@ -4467,7 +4467,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			{
 			    RemovePlayerFromVehicle(playerid);
 			    HideCarInfo(playerid);
-		        SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Данный транспорт Вам больше недоступен");
+		        SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Es transporti tqventivs xelmisawvdomi agar aris");
 		        return 1;
 			}
 		}
@@ -4475,7 +4475,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 		{
 			if(PI[playerid][pJob] != 1)
 			{
-				SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы не водитель автобуса");
+				SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar xart avtobusis mdzgoli");
 				RemovePlayerFromVehicle(playerid);
 				HideCarInfo(playerid);
 				return 1;
@@ -4489,30 +4489,30 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 	
 			if(VehicleInfo[vehid][vBusOwner] != INVALID_PLAYER_ID)
 			{
-				SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Этот автобус уже арендуют");
+				SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Am avtobuss ukve qiraoben");
 				RemovePlayerFromVehicle(playerid);
 				HideCarInfo(playerid);
 				return 1;
 			}
 			
 			if(temp_bus_id[playerid] != INVALID_VEHICLE_ID && temp_bus_id[playerid] != vehid)
-				return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы уже арендуете автобус"), RemovePlayerFromVehicle(playerid);
+				return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ukve qiraobt avtobuss"), RemovePlayerFromVehicle(playerid);
 
 			if(PI[playerid][pMoney] < 200)
 			{
-				SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вам нужно 200$ для аренды автобуса");
+				SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven gchirdebat 200$ avtobusis qiraobisatvis");
 				RemovePlayerFromVehicle(playerid);
                 HideCarInfo(playerid);
 				return 1;
 			}
 
-      		ShowPlayerDialogEx(playerid, 481, DIALOG_STYLE_MSGBOX, !"Аренда автобуса", !"{FFFFFF}Стоимость аренды этого транспорта составляет {FA8072}200${FFFFFF}\n\nВы действительно хотите арендовать автобус?", !"Да", !"Нет");
+      		ShowPlayerDialogEx(playerid, 481, DIALOG_STYLE_MSGBOX, !"Avtobusis qiraoba", !"{FFFFFF}Am transportis qiraoba girs {FA8072}200${FFFFFF}\n\nTqven nagdad gsurt avtobusis qiraoba?", !"Dadastureba", !"Gauqmeba");
 		}
 		if(vehid >= vTaxi[0] && vehid <= vTaxi[1])
 		{
 			if(PI[playerid][pJob] != 2)
 			{
-				SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы не работаете таксистом");
+				SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Mushaoba] {FFFFFF}Tqven ar moushaobt taqsistad");
 				RemovePlayerFromVehicle(playerid);
 				HideCarInfo(playerid);
 				return 1;
@@ -4530,22 +4530,22 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 
 				if(pTemp[playerid][pTaxiID] == vehid)
 				{
-					SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Это такси уже арендуют");
+					SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Am taqsis ukve qiraoben");
 					RemovePlayerFromVehicle(playerid);
 					HideCarInfo(playerid);
 				}
 			}
 			if(pTemp[playerid][pTaxiID] != INVALID_VEHICLE_ID && pTemp[playerid][pTaxiID] != vehid)
-				return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы уже арендуете такси"), RemovePlayerFromVehicle(playerid);
+				return SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ukve qiraobt taqsis"), RemovePlayerFromVehicle(playerid);
 
 			if(PI[playerid][pMoney] < 200)
 			{
-				SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вам нужно 200$ для аренды такси");
+				SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven gchirdebat 200$ taqsis qiraobisatvis");
 				RemovePlayerFromVehicle(playerid);
                 HideCarInfo(playerid);
 				return 1;
 			}
-      		ShowPlayerDialogEx(playerid, 484, DIALOG_STYLE_MSGBOX, !"Аренда такси", !"{FFFFFF}Стоимость аренды этого транспорта составляет {FA8072}200${FFFFFF}\n\nВы действительно хотите арендовать такси?", !"Да", !"Нет");
+      		ShowPlayerDialogEx(playerid, 484, DIALOG_STYLE_MSGBOX, !"Taqsis qiraoba", !"{FFFFFF}Am transportis qiraobis safasuri sheadgens {FA8072}200${FFFFFF}\n\nTqven namdvilad gsurt taqsis giraoba?", !"Dadastureba", !"Gauqmeba");
 
 		}
 		
@@ -4568,11 +4568,11 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 		}
   		if((vehid >= vProduct[0] && vehid <= vProduct[1]))
 		{
-  			if(GetPVarInt(playerid, "CarProduct") && GetPVarInt(playerid, "CarProduct") != vehid) return SCM(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы уже арендовали транспортное средство."),RemovePlayerFromVehicle(playerid);
-			if(PI[playerid][pJob] != JOB_PRODUCT) return RemovePlayerFromVehicle(playerid), SCM(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы не развозчик заказов");
+  			if(GetPVarInt(playerid, "CarProduct") && GetPVarInt(playerid, "CarProduct") != vehid) return SCM(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ukve iqiravet transporti."),RemovePlayerFromVehicle(playerid);
+			if(PI[playerid][pJob] != JOB_PRODUCT) return RemovePlayerFromVehicle(playerid), SCM(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar xar shekvetebis dabrigebeli");
 			if(GetPVarInt(playerid, "CarProduct") != vehid)
 			{
-				ShowPlayerDialogEx(playerid, 5570, 0, "Аренда", "\n{ffffff}Вы хотите арендовать данный автомобиль?\nСтоимость: {63BD4E}$200.\n\n", "Да", "Нет");
+				ShowPlayerDialogEx(playerid, 5570, 0, "Qiraoba", "\n{ffffff}Tqven gsurt am avtomobilis qiraoba?\nGirebuleba: {63BD4E}$200.\n\n", "Dadastureba", "Gauqmeba");
 			}
 			else if(vehid == GetPVarInt(playerid, "CarProduct"))
 			{
@@ -4594,14 +4594,14 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 		{
 			if(PI[playerid][pJob] != JOB_MECHANIC)
 			{
-				SendClientMessage(playerid,COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы не работаете механиком");
+				SendClientMessage(playerid,COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar mushaobt meqanikad");
 				RemovePlayerFromVehicle(playerid);
 				return 1;
 			}
 			if(pTemp[playerid][pMechID] == vehid) return 1;
 			if(pTemp[playerid][pMechID] != INVALID_VEHICLE_ID)
 			{
-				SendClientMessage(playerid,COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы уже арендуете авто");
+				SendClientMessage(playerid,COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ukve qiraobt avtomobils");
 				RemovePlayerFromVehicle(playerid);
 				return 1;
 			}
@@ -4609,32 +4609,32 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			{
 				if(pTemp[i][pMechID] == vehid)
 				{
-					SendClientMessage(playerid,COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Это авто уже арендуют.");
+					SendClientMessage(playerid,COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Am avtomobils ukve qiraoben.");
 					RemovePlayerFromVehicle(playerid);
 					return 1;
 				}
 			}
 			if(GetMoney(playerid) < 200)
 			{
-				SendClientMessage(playerid,COLOR_WHITE,"{FF2222}[Ошибка] {FFFFFF}Вам нужно 200$ чтобы арендовать эвакуатор");
+				SendClientMessage(playerid,COLOR_WHITE,"{FF2222}[Shecdoma] {FFFFFF}Tqven gchirdebat 200$ evakuatoris qiraobisatvis");
 				return RemovePlayerFromVehicle(playerid);
 			}
 			totalstring[0] = 0;
-			ShowPlayerDialogEx(playerid,5567,0,"Аренда авто","{FFFFFF}\nВы хотите арендовать это авто за {63BD4E}$200{FFFFFF}?\n\n","Да","Нет");
+			ShowPlayerDialogEx(playerid,5567,0,"Аренда авто","{FFFFFF}\nTqven gsurt avtomobilis giraoba  {63BD4E}$200-ad{FFFFFF}?\n\n","Dadastureba","Gauqmeba");
 		}
 		// truck321
 	    if((vehid >= vTruck[0][0] && vehid <= vTruck[2][1]))
 		{
 			if(PI[playerid][pJob] != JOB_TRUCKER)
 			{
-				SendClientMessage(playerid,COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы не работаете дальнобойщиком");
+				SendClientMessage(playerid,COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar mushaobt satvirtos mdzgolad");
 				RemovePlayerFromVehicle(playerid);
 				return 1;
 			}
 			if(pTemp[playerid][pTruckID] == vehid) return 1;
 			if(pTemp[playerid][pTruckID] != INVALID_VEHICLE_ID)
 			{
-				SendClientMessage(playerid,COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Вы уже арендуете тягач");
+				SendClientMessage(playerid,COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ukve qiraobt satvirto manqanas");
 				RemovePlayerFromVehicle(playerid);
 				return 1;
 			}
@@ -4642,7 +4642,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			{
 				if(pTemp[i][pTruckID] == vehid)
 				{
-					SendClientMessage(playerid,COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Этот тягач уже арендуют.");
+					SendClientMessage(playerid,COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Am satvirto avtomobils ukve qiraoben.");
 					RemovePlayerFromVehicle(playerid);
 					return 1;
 				}
@@ -4657,22 +4657,22 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 
 			if((trucklevel == 2 && PI[playerid][pTruckSkill] < TRUCK_LEVEL_2) || (trucklevel == 3 && PI[playerid][pTruckSkill] < TRUCK_LEVEL_3))
 			{
-				SendClientMessage(playerid,COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Ваш опыт работы дальнобойщиком недостаточен для этого транспорта");
+				SendClientMessage(playerid,COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqveni gamocdileba satvirto avtomobilis mdzgolad ar aris sakmarisi am samsaxurisatvis");
 				RemovePlayerFromVehicle(playerid);
 				return 1;
 			}
 			if(GetMoney(playerid) < price)
 			{
 			    totalstring[0] = 0;
-				format(totalstring,80,"{FF2222}[Ошибка] {FFFFFF}Вам нужно %d$ чтобы арендовать этот грузовик",price);
+				format(totalstring,80,"{FF2222}[Shecdoma] {FFFFFF}Tqven gchirdebat %d$ Satvirto avtomobilis saqiraveblad",price);
 				SendClientMessage(playerid,COLOR_WHITE,totalstring);
 				totalstring[0] = 0;
 				return RemovePlayerFromVehicle(playerid);
 			}
 			SetPVarInt(playerid,"truckprice",price);
 			totalstring[0] = 0;
-			format(totalstring,130,"{FFFFFF}Вы хотите арендовать этот грузовик за {63BD4E}$%d{FFFFFF},\n чтобы возить на нем грузы?",price);
-			ShowPlayerDialogEx(playerid,5556,0,"Аренда грузовика",totalstring,"Да","Нет");
+			format(totalstring,130,"{FFFFFF}Tqven gsurt satvirto avtomobilis giraoba {63BD4E}$%d-ad{FFFFFF},\n Imisatvis rom tvirti gadaitanot?",price);
+			ShowPlayerDialogEx(playerid,5556,0,"Satvirto avtomobilis qiaraoba",totalstring,"Dadastureba","Gauqmeba");
 		}
     }
     else if(newstate == PLAYER_STATE_PASSENGER)
@@ -4695,22 +4695,22 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 		}
 
 	    new driverid = GetVehicleSeat(vehid,0);
-		if(vehid >= vBus[0] && vehid <= vBus[1] && driverid != INVALID_PLAYER_ID) //Пассажир сел в автобус
+		if(vehid >= vBus[0] && vehid <= vBus[1] && driverid != INVALID_PLAYER_ID) //Mgzavri chajda avtobushi
 		{
 			new price = temp_bus_price[driverid];
 			if(PI[playerid][pLevel] < 3)
 			{
-			    //SetPlayerChatBubble(playerid, "показал(а) водителю проездной", COLOR_PURPLE, 15.0, 5000);
+			    //SetPlayerChatBubble(playerid, "Achvena , mdzgols bileti", COLOR_PURPLE, 15.0, 5000);
 			    new
 					frmt_action[60];
 
-				format(frmt_action, sizeof frmt_action, "%s показал(а) водителю проездной", PN(playerid));
+				format(frmt_action, sizeof frmt_action, "%s Achvena, mdzgols bileti", PN(playerid));
 			    ProxDetector(25.0, playerid, frmt_action, COLOR_ME);
 				return 1;
 			}
 			if(PI[playerid][pMoney] < price)
 			{
-			    SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У Вас недостаточно денег для оплаты проезда");
+			    SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar gaqvt sakmarisi tanxa mgzavrobisatvis");
 			    RemovePlayerFromVehicle(playerid);
 			    HideCarInfo(playerid);
 			    return 1;
@@ -4721,10 +4721,10 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			format(mes,sizeof(mes),"~r~-$%d",price);
 			GameTextForPlayer(playerid,mes,1000,1);
 
-			GiveMoney(playerid, -price, "оплата проезда");
-			GiveMoney(driverid, price, "зп проезда");
+			GiveMoney(playerid, -price, "Mgzavrobis gadaxda");
+			GiveMoney(driverid, price, "Mgzavrobis xelfasi");
 		}
-		if(vehid >= vTaxi[0] && vehid <= vTaxi[1] && driverid != INVALID_PLAYER_ID) //Пассажир сел в такси
+		if(vehid >= vTaxi[0] && vehid <= vTaxi[1] && driverid != INVALID_PLAYER_ID) //Mgzavri chajda taqsishi
 		{
 			if(pTemp[driverid][pTaxiID] != vehid || !pTemp[driverid][pTaxiPrice])
 				return 1;
@@ -4733,7 +4733,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 			{
 				if(PI[playerid][pMoney] < pTemp[driverid][pTaxiPrice])
 				{
-					SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}У Вас недостаточно денег");
+					SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Tqven ar gaqvt sakmarisi tanxa");
 					HideCarInfo(playerid);
 					return RemovePlayerFromVehicle(playerid);
 				}
@@ -4765,7 +4765,7 @@ public OnPlayerStateChange(playerid, newstate, oldstate)
 
 					else
 					{
-						SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Ошибка] {FFFFFF}Произошла системная ошибка. Перезайдите в такси");
+						SendClientMessage(playerid, COLOR_WHITE, !"{FF2222}[Shecdoma] {FFFFFF}Moxda sistemuri shecdoma. Tvidan chajeqit taqsishi");
 						HideCarInfo(playerid);
 						RemovePlayerFromVehicle(playerid);
 					}
